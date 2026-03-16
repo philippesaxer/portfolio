@@ -125,18 +125,12 @@ body::before {
   z-index: -999;
   pointer-events: none;
   background:
-    /* Top Left - Mint Glow */
-    radial-gradient(circle at 10% 10%, rgba(0, 245, 212, 0.15) 0%, transparent 45%),
-    /* Top Right - White/Sky Glow */
-    radial-gradient(circle at 90% 5%, rgba(255, 255, 255, 0.1) 0%, transparent 40%),
-    /* Center - Bright Blue Bloom */
-    radial-gradient(circle at 50% 50%, rgba(0, 180, 255, 0.12) 0%, transparent 60%),
-    /* Bottom Right - Cyan/Mint Glow */
-    radial-gradient(circle at 95% 90%, rgba(0, 229, 255, 0.1) 0%, transparent 40%),
-    /* Bottom Left - Soft White Glow */
-    radial-gradient(circle at 5% 95%, rgba(255, 255, 255, 0.08) 0%, transparent 35%),
-    /* Base Dark Blue Gradient */
-    linear-gradient(135deg, #020610 0%, #06122a 50%, #020610 100%);
+    /* Top Left - Intense Neon Blue Glow */
+    radial-gradient(circle at 0% 0%, rgba(0, 242, 255, 0.25) 0%, transparent 50%),
+    /* Bottom Right - Deep Blue Depth */
+    radial-gradient(circle at 100% 100%, rgba(0, 71, 255, 0.15) 0%, transparent 50%),
+    /* Main Background Gradient */
+    linear-gradient(135deg, #040d21 0%, #020617 100%);
   background-size: 100% 100%;
 }
 
