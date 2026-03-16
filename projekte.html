@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Alle Projekte von Philippe Saxer — Übersicht mit Kategoriefiler.">
+  <title>Projekte — Philippe Saxer</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="icon" href="images/logo.png" type="image/png">
+</head>
+<body style="overflow-x: hidden;">
+
+  <!-- LOADING SCREEN -->
+  <div id="page-loader">
+    <img src="images/logo.png" alt="Loading..." class="loader-logo">
+  </div>
+
+  <!-- ====================================================
+       HEADER
+       ==================================================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="site-logo">
+        <img src="images/logo.png" alt="Philippe.dev Logo" style="height: 32px; width: auto; object-fit: contain;">
+      </a>
+      <nav class="site-nav">
+        <a href="index.html"    class="nav-link">Home</a>
+        <a href="projekte.html" class="nav-link active">Projekte</a>
+        <a href="kontakt.html"  class="nav-cta">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ====================================================
+       MAIN
+       ==================================================== -->
+  <main>
+
+    <!--
+      FILTER SYSTEM (CSS-only via radio button hack)
+      All radio inputs MUST be direct siblings of
+      .filter-bar-wrap and .grid-wrap so the ~ selector works.
+    -->
+    <section>
+
+      <!-- 1 · Page header (outside filter scope) -->
+      <div class="page-hero">
+        <div class="container">
+          <span class="section-label">// Alle Arbeiten</span>
+          <h1>Projekte</h1>
+          <p>Zehn Schulprojekte aus verschiedenen Bereichen der Informatik und Applikationsentwicklung.</p>
+        </div>
+      </div>
+
+      <!-- 2 · Hidden radio inputs (direct children of section) -->
+      <input type="radio" id="filter-all"         name="category-filter" class="filter-radio" checked>
+      <input type="radio" id="filter-games"        name="category-filter" class="filter-radio">
+      <input type="radio" id="filter-backend"      name="category-filter" class="filter-radio">
+      <input type="radio" id="filter-iot"          name="category-filter" class="filter-radio">
+      <input type="radio" id="filter-frontend"     name="category-filter" class="filter-radio">
+      <input type="radio" id="filter-programming"  name="category-filter" class="filter-radio">
+      <input type="radio" id="filter-database"     name="category-filter" class="filter-radio">
+      <input type="radio" id="filter-tools"        name="category-filter" class="filter-radio">
+      <input type="radio" id="filter-systems"      name="category-filter" class="filter-radio">
+
+      <!-- 3 · Filter bar (direct child of section → sibling of radios) -->
+      <div class="filter-bar-wrap">
+        <div class="filter-bar">
+          <label for="filter-all"         class="filter-btn">Alle</label>
+          <label for="filter-games"       class="filter-btn">Games</label>
+          <label for="filter-backend"     class="filter-btn">Backend</label>
+          <label for="filter-iot"         class="filter-btn">IoT</label>
+          <label for="filter-frontend"    class="filter-btn">Frontend</label>
+          <label for="filter-programming" class="filter-btn">Programming</label>
+          <label for="filter-database"    class="filter-btn">Database</label>
+          <label for="filter-tools"       class="filter-btn">Tools</label>
+          <label for="filter-systems"     class="filter-btn">Systems</label>
+        </div>
+      </div>
+
+      <!-- 4 · Projects grid (direct child of section → sibling of radios) -->
+      <div class="grid-wrap">
+        <div class="projects-grid">
+
+          <!-- 01 · Migros Prop Hunt — Games -->
+          <article class="project-card cat-games">
+            <a href="projekt-migrosprophunt.html" class="card-link-layer" aria-label="Migros Prop Hunt ansehen"></a>
+            <div class="card-thumb">
+              <img src="images/migrosprophunt.png" alt="Migros Prop Hunt" class="card-thumb-img">
+              <span class="card-badge">Games</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Migros Prop Hunt</h3>
+              <p class="card-desc">Ein Hide-and-Seek Spiel im Migros-Universum. Spieler schlüpfen in die Rolle von Migros-Produkten und verstecken sich vor dem Jäger.</p>
+              <a href="projekt-migrosprophunt.html" class="card-link">Projekt ansehen</a>
+            </div>
+          </article>
+
+          <!-- 02 · Node.js API Development — Backend -->
+          <article class="project-card cat-backend">
+            <a href="projekt-nodejs.html" class="card-link-layer" aria-label="Node.js Projekt ansehen"></a>
+            <div class="card-thumb">
+              <img src="images/nodejs.png" alt="Node.js" class="card-thumb-img">
+              <span class="card-badge">Backend</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Node.js</h3>
+              <p class="card-desc">Serverseitige JavaScript-Entwicklung mit Node.js. Erstellen von RESTful APIs, Routing und Verwaltung von Server-Logik ohne Browser.</p>
+              <a href="projekt-nodejs.html" class="card-link">Projekt ansehen</a>
+            </div>
+          </article>
+
+          <!-- 03 · Internet of Everything — IoT -->
+          <article class="project-card cat-iot">
+            <a href="projekt-iot.html" class="card-link-layer" aria-label="Internet of Everything ansehen"></a>
+            <div class="card-thumb">
+              <img src="images/iotioe.png" alt="Internet of Everything" class="card-thumb-img">
+              <span class="card-badge">IoT</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Internet of Everything</h3>
+              <p class="card-desc">Vernetzung von physischen Geräten und Alltagsgegenständen über das Internet. Sensordaten erfassen, übertragen und visualisieren.</p>
+              <a href="projekt-iot.html" class="card-link">Projekt ansehen</a>
+            </div>
+          </article>
+
+          <!-- 04 · JavaScript Frontend — Frontend -->
+          <article class="project-card cat-frontend">
+            <a href="projekt-frontend.html" class="card-link-layer" aria-label="JavaScript Frontend ansehen"></a>
+            <div class="card-thumb">
+              <img src="images/programmiergrundlagen2.png" alt="JavaScript Frontend" class="card-thumb-img">
+              <span class="card-badge">Frontend</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">JavaScript Frontend</h3>
+              <p class="card-desc">Dynamische Webseiten mit reinem JavaScript entwickeln. Event-Handling, DOM-Manipulation und moderne ES6+ Features praxisnah umgesetzt.</p>
+              <a href="projekt-frontend.html" class="card-link">Projekt ansehen</a>
+            </div>
+          </article>
+
+          <!-- 05 · Python Crashcourse — Programming -->
+          <article class="project-card cat-programming">
+            <a href="projekt-python.html" class="card-link-layer" aria-label="Python Projekt ansehen"></a>
+            <div class="card-thumb">
+              <img src="images/python.png" alt="Python Crashcourse" class="card-thumb-img">
+              <span class="card-badge">Programming</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Python Crashcourse</h3>
+              <p class="card-desc">Schnelleinstieg in die Programmiersprache Python. Von Grundlagen bis zu praktischen Anwendungen — kompakt und praxisorientiert.</p>
+              <a href="projekt-python.html" class="card-link">Projekt ansehen</a>
+            </div>
+          </article>
+
+          <!-- 06 · Datenbanken und UML — Database -->
+          <article class="project-card cat-database">
+            <a href="projekt-database.html" class="card-link-layer" aria-label="Datenbanken Projekt ansehen"></a>
+            <div class="card-thumb">
+              <img src="images/uml.png" alt="Datenbanken und UML" class="card-thumb-img">
+              <span class="card-badge">Database</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Grundlagen und Entwurf von Datenbanken und UML</h3>
+              <p class="card-desc">Relationale Datenbanken entwerfen, normalisieren und mit UML-Diagrammen modellieren. Entity-Relationship-Modelle und SQL-Grundlagen.</p>
+              <a href="projekt-database.html" class="card-link">Projekt ansehen</a>
+            </div>
+          </article>
+
+          <!-- 07 · Microsoft Office & Präsentationen — Tools -->
+          <article class="project-card cat-tools">
+            <a href="projekt-office.html" class="card-link-layer" aria-label="Office Projekt ansehen"></a>
+            <div class="card-thumb">
+              <img src="images/powerpoint.png" alt="Microsoft Office" class="card-thumb-img">
+              <span class="card-badge">Tools</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Microsoft Office | Power Point</h3>
+              <p class="card-desc">Professionelle Präsentationen und Office-Dokumente erstellen. Effektive Visualisierung von Informationen für technische und nicht-technische Zielgruppen.</p>
+              <a href="projekt-office.html" class="card-link">Projekt ansehen</a>
+            </div>
+          </article>
+
+          <!-- 08 · Programmiergrundlagen I — Programming -->
+          <article class="project-card cat-programming">
+            <a href="projekt-programming1.html" class="card-link-layer" aria-label="Programmiergrundlagen ansehen"></a>
+            <div class="card-thumb">
+              <img src="images/programmiergrundlagen.png" alt="Programmiergrundlagen I" class="card-thumb-img">
+              <span class="card-badge">Programming</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Programmiergrundlagen I</h3>
+              <p class="card-desc">Erste Schritte in der Programmierung: Variablen, Datentypen, Schleifen, Funktionen und einfache Algorithmen verständlich erklärt.</p>
+              <a href="projekt-programming1.html" class="card-link">Projekt ansehen</a>
+            </div>
+          </article>
+
+          <!-- 09 · System Development Fundamentals — Systems -->
+          <article class="project-card cat-programming">
+            <a href="projekt-dev-fundamentals.html" class="card-link-layer" aria-label="System Development ansehen"></a>
+            <div class="card-thumb">
+              <img src="images/systemdevolopment.png" alt="Development Fundamentals" class="card-thumb-img">
+              <span class="card-badge">Programming</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Development Fundamentals</h3>
+              <p class="card-desc">Grundlegende Konzepte der Softwareentwicklung: Versionskontrolle mit Git, Code-Qualität, Clean Code und Entwicklungsprozesse.</p>
+              <a href="projekt-dev-fundamentals.html" class="card-link">Projekt ansehen</a>
+            </div>
+          </article>
+
+          <!-- 10 · Windows Internals — Systems -->
+          <article class="project-card cat-systems">
+            <a href="projekt-windows.html" class="card-link-layer" aria-label="Windows Internals ansehen"></a>
+            <div class="card-thumb">
+              <img src="images/windowsregistery.png" alt="Windows Internals" class="card-thumb-img">
+              <span class="card-badge">Systems</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Windows Internals/Registry</h3>
+              <p class="card-desc">Tiefes Verständnis des Windows-Betriebssystems: Registry-Struktur, Systemprozesse, Dienste und grundlegende Kernel-Konzepte.</p>
+              <a href="projekt-windows.html" class="card-link">Projekt ansehen</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+      <!-- end section -->
+    </section>
+
+  </main>
+
+  <!-- ====================================================
+       FOOTER
+       ==================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="site-logo" style="margin-bottom: var(--sp-sm); display: inline-block;">
+            <img src="images/logo.png" alt="Philippe.dev Logo" style="height: 48px; width: auto; object-fit: contain;">
+          </a>
+          <p>Informatiker Applikationsentwickler EFZ<br>Lehrling bei der MGB · BMZ</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html"    class="footer-link">Home</a></li>
+            <li><a href="projekte.html" class="footer-link">Projekte</a></li>
+            <li><a href="kontakt.html"  class="footer-link">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Kategorien</h4>
+          <ul class="footer-links">
+            <li><a href="projekte.html" class="footer-link">Games &amp; Systems</a></li>
+            <li><a href="projekte.html" class="footer-link">Backend &amp; Frontend</a></li>
+            <li><a href="projekte.html" class="footer-link">Programming &amp; IoT</a></li>
+            <li><a href="projekte.html" class="footer-link">Database &amp; Tools</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Kontakt</h4>
+          <ul class="footer-links">
+            <li><a href="kontakt.html"                       class="footer-link">Kontaktformular</a></li>
+            <li><a href="mailto:philippesaxer8@gmail.com"    class="footer-link">E-Mail schreiben</a></li>
+          </ul>
+        </div>
+        <div class="footer-col newsletter-col">
+          <h4>Newsletter</h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: var(--sp-md);">Immer auf dem Laufenden bleiben.</p>
+          <form class="footer-newsletter-form" action="mailto:philippesaxer8@gmail.com" method="post" enctype="text/plain">
+            <input type="email" name="email" placeholder="E-Mail Adresse" required class="footer-newsletter-input">
+            <button type="submit" class="footer-newsletter-btn">Abonnieren</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2025 Philippe Saxer. Alle Rechte vorbehalten.</p>
+        <div class="footer-status">
+          <span class="status-dot"></span>
+          <span>Verfügbar für Anfragen</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Apple-Style Scroll Reveal Animation
+    document.addEventListener("DOMContentLoaded", () => {
+      const observerOptions = {
+        threshold: 0.15,
+        rootMargin: "0px 0px -10% 0px"
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("reveal-active");
+          } else {
+            entry.target.classList.remove("reveal-active");
+          }
+        });
+      }, observerOptions);
+
+      // Select elements to animate
+      const sections = document.querySelectorAll("section:not(.hero)");
+      const cards = document.querySelectorAll(".project-card, .category-card");
+      
+      sections.forEach((el, index) => {
+        if (index % 2 === 0) {
+          el.classList.add("reveal-left");
+        } else {
+          el.classList.add("reveal-right");
+        }
+        observer.observe(el);
+      });
+
+      cards.forEach((el, index) => {
+        el.classList.add("reveal-up");
+        el.style.transitionDelay = `${(index % 3) * 0.1}s`;
+        observer.observe(el);
+      });
+    });
+
+    // Hide Loading Screen
+    window.addEventListener("load", () => {
+      const loader = document.getElementById("page-loader");
+      if (loader) {
+        setTimeout(() => {
+          loader.classList.add("loader-hidden");
+        }, 500);
+      }
+    });
+  </script>
+  <script src="js/main.js"></script>
+</body>
+</html>

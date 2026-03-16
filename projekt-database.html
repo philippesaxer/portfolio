@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Migros Prop Hunt — Projektdetail von Philippe Saxer.">
+  <title>Datenbanken und UML — Philippe Saxer</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="icon" href="images/logo.png" type="image/png">
+</head>
+<body style="overflow-x: hidden;">
+
+  <!-- LOADING SCREEN -->
+  <div id="page-loader">
+    <img src="images/logo.png" alt="Loading..." class="loader-logo">
+  </div>
+
+  <!-- ====================================================
+       HEADER
+       ==================================================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="site-logo">
+        <img src="images/logo.png" alt="Philippe.dev Logo" style="height: 32px; width: auto; object-fit: contain;">
+      </a>
+      <nav class="site-nav">
+        <a href="index.html"    class="nav-link">Home</a>
+        <a href="projekte.html" class="nav-link active">Projekte</a>
+        <a href="kontakt.html"  class="nav-cta">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ====================================================
+       MAIN
+       ==================================================== -->
+  <main>
+    <div class="container">
+
+      <!-- Back navigation -->
+      <a href="projekte.html" class="back-link">Alle Projekte</a>
+
+      <!-- Project hero banner -->
+      <div class="project-hero-area" style="background: url('images/uml.png') center/cover no-repeat; text-align: center; border-radius: var(--r-xl); position: relative; overflow: hidden; height: 300px; box-shadow: 0 0 20px rgba(0,229,255,0.2);">
+        <div class="project-hero-bg" style="position: absolute; inset: 0; background: rgba(8, 14, 28, 0.4); backdrop-filter: blur(2px);"></div>
+        <div class="project-hero-content" style="position: relative; z-index: 2; display: flex; align-items: center; justify-content: center; height: 100%;">
+          <span class="project-hero-symbol" style="font-size: 0; color: transparent;"></span>
+        </div>
+      </div>
+
+      <!-- Project content layout -->
+      <div class="project-layout">
+
+        <!-- Left: description & gallery -->
+        <div class="project-body">
+
+          <h1 class="project-title">Datenbanken und UML</h1>
+          <div class="project-meta-bar">
+            <span class="project-cat"><span class="cat-dot" style="background: var(--cat-database);"></span> Database</span>
+            <span class="project-date">2026</span>
+            <span class="project-status status-done">Abgeschlossen</span>
+          </div>
+          <p class="project-lead">
+            Datenbankdesign, ER-Modellierung, SQL und UML-Klassendiagramme.
+          </p>
+          
+          <h3>Projektbeschreibung</h3>
+          <p>
+            Dieses Modul behandelte den systematischen Entwurf von relationalen Datenbanken.
+            Ausgehend von fachlichen Anforderungen wurden Entity-Relationship-Modelle (ERM) 
+            und UML-Klassendiagramme erstellt, um komplexe Datenstrukturen visuell zu erfassen.
+          </p>
+          <p>
+            Im praktischen Teil wurden diese Modelle in physische SQL-Datenbanken überführt, 
+            Tabellen normalisiert und komplexe Abfragen mit JOINs entwickelt.
+          </p>
+
+        </div>
+
+        <!-- Right: consultation form -->
+        <aside>
+          <div class="sidebar-box">
+            <div class="sidebar-box-header">
+              <h4>Beratungstermin anfragen</h4>
+              <p>Interesse am Projekt? Schreib mir direkt.</p>
+            </div>
+            <form class="sidebar-form" action="mailto:philippesaxer8@gmail.com" method="post" enctype="text/plain">
+              <div class="form-group">
+                <label for="consult-name" class="form-label">Name</label>
+                <input type="text"  id="consult-name"  name="name"  class="form-input" placeholder="Max Muster" required>
+              </div>
+              <div class="form-group">
+                <label for="consult-email" class="form-label">E-Mail</label>
+                <input type="email" id="consult-email" name="email" class="form-input" placeholder="max@muster.ch" required>
+              </div>
+              <div class="form-group">
+                <label for="consult-msg" class="form-label">Nachricht</label>
+                <textarea id="consult-msg" name="nachricht" class="form-textarea" placeholder="Ich interessiere mich für..." required></textarea>
+              </div>
+              <button type="submit" class="btn-primary btn-full">Anfrage senden</button>
+            </form>
+          </div>
+        </aside>
+
+      </div>
+      <!-- end project-layout -->
+
+    </div>
+  </main>
+
+  <!-- ====================================================
+       FOOTER
+       ==================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="site-logo" style="margin-bottom: var(--sp-sm); display: inline-block;">
+            <img src="images/logo.png" alt="Philippe.dev Logo" style="height: 48px; width: auto; object-fit: contain;">
+          </a>
+          <p>Informatiker Applikationsentwickler EFZ<br>Lehrling bei der MGB · BMZ</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html"    class="footer-link">Home</a></li>
+            <li><a href="projekte.html" class="footer-link">Projekte</a></li>
+            <li><a href="kontakt.html"  class="footer-link">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Kategorien</h4>
+          <ul class="footer-links">
+            <li><a href="projekte.html" class="footer-link">Games &amp; Systems</a></li>
+            <li><a href="projekte.html" class="footer-link">Backend &amp; Frontend</a></li>
+            <li><a href="projekte.html" class="footer-link">Programming &amp; IoT</a></li>
+            <li><a href="projekte.html" class="footer-link">Database &amp; Tools</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Kontakt</h4>
+          <ul class="footer-links">
+            <li><a href="kontakt.html"                       class="footer-link">Kontaktformular</a></li>
+            <li><a href="mailto:philippesaxer8@gmail.com"    class="footer-link">E-Mail schreiben</a></li>
+          </ul>
+        </div>
+        <div class="footer-col newsletter-col">
+          <h4>Newsletter</h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: var(--sp-md);">Immer auf dem Laufenden bleiben.</p>
+          <form class="footer-newsletter-form" action="mailto:philippesaxer8@gmail.com" method="post" enctype="text/plain">
+            <input type="email" name="email" placeholder="E-Mail Adresse" required class="footer-newsletter-input">
+            <button type="submit" class="footer-newsletter-btn">Abonnieren</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2025 Philippe Saxer. Alle Rechte vorbehalten.</p>
+        <div class="footer-status">
+          <span class="status-dot"></span>
+          <span>Verfügbar für Anfragen</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Apple-Style Scroll Reveal Animation
+    document.addEventListener("DOMContentLoaded", () => {
+      const observerOptions = {
+        threshold: 0.15,
+        rootMargin: "0px 0px -10% 0px"
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("reveal-active");
+          } else {
+            entry.target.classList.remove("reveal-active");
+          }
+        });
+      }, observerOptions);
+
+      // Select elements to animate
+      const sections = document.querySelectorAll("section:not(.hero), .project-body, .sidebar-box");
+      const cards = document.querySelectorAll(".project-card, .category-card");
+      
+      sections.forEach((el, index) => {
+        if (index % 2 === 0) {
+          el.classList.add("reveal-up");
+        } else {
+          el.classList.add("reveal-left");
+        }
+        observer.observe(el);
+      });
+
+      cards.forEach((el, index) => {
+        el.classList.add("reveal-up");
+        el.style.transitionDelay = `${(index % 3) * 0.1}s`;
+        observer.observe(el);
+      });
+    });
+
+    // Hide Loading Screen
+    window.addEventListener("load", () => {
+      const loader = document.getElementById("page-loader");
+      if (loader) {
+        // Small delay so the user sees the cool pulsing effect
+        setTimeout(() => {
+          loader.classList.add("loader-hidden");
+        }, 500);
+      }
+    });
+  </script>
+  <script src="js/main.js"></script>
+</body>
+</html>

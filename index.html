@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio von Philippe Saxer — Informatiker Applikationsentwickler EFZ Lehrling bei der MGB.">
+  <title>Philippe Saxer — Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="icon" href="images/logo.png" type="image/png">
+</head>
+<body style="overflow-x: hidden;">
+
+  <!-- LOADING SCREEN -->
+  <div id="page-loader">
+    <img src="images/logo.png" alt="Loading..." class="loader-logo">
+  </div>
+
+  <!-- ====================================================
+       HEADER
+       ==================================================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="site-logo">
+        <img src="images/logo.png" alt="Philippe.dev Logo" style="height: 32px; width: auto; object-fit: contain;">
+      </a>
+      <nav class="site-nav">
+        <a href="index.html"    class="nav-link active">Home</a>
+        <a href="projekte.html" class="nav-link">Projekte</a>
+        <a href="kontakt.html"  class="nav-cta">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ====================================================
+       MAIN
+       ==================================================== -->
+  <main>
+
+    <!-- HERO -->
+    <section class="hero scroll-hero">
+      <div class="hero-sticky-wrapper">
+        <!-- 3D CUBE ANIMATION BACKGROUND -->
+        <div class="cube-container" id="cubeContainer">
+        <div class="cube" id="heroCube">
+          <!-- FRONT FACE -->
+          <div class="face front">
+            <div class="hero-content-wrapper" style="align-items: center; text-align: center;">
+              <p class="hero-label">Portfolio</p>
+              <h1 class="hero-name" style="margin-bottom: 0;">
+                Philippe
+                <span class="name-line-2">Saxer<span class="hero-cursor"></span></span>
+              </h1>
+            </div>
+          </div>
+          <!-- BACK FACE -->
+          <div class="face back">
+            <div class="hero-content-wrapper" style="align-items: center; text-align: center;">
+              <h2 style="font-size: 2rem; margin-bottom: 1rem;">Lass uns schreiben!</h2>
+              <div class="hero-cta" style="justify-content: center;">
+                <a href="projekte.html" class="btn-primary">Alle Projekte</a>
+                <a href="kontakt.html"  class="btn-secondary">Kontakt aufnehmen</a>
+              </div>
+            </div>
+          </div>
+          <!-- RIGHT FACE -->
+          <div class="face right">
+            <div class="hero-content-wrapper" style="align-items: center; text-align: center;">
+              <p class="hero-label">Informatiker Applikationsentwicklung EFZ</p>
+              <p class="hero-tagline" style="font-size: 1.25rem;">
+                Ich lerne <span class="highlight">Code</span> zu schreiben, als Lehrling bei der <span class="highlight">MGB</span>
+                und Schüler an der <span class="highlight">BMZ</span>.
+              </p>
+            </div>
+          </div>
+          <!-- LEFT FACE -->
+          <div class="face left">
+            <div class="hero-content-wrapper" style="align-items: center; text-align: center;">
+              <div class="hero-stats" style="flex-wrap: wrap; justify-content: center; width: 100%;">
+                <div class="stat-item">
+                  <span class="stat-number">10</span>
+                  <span class="stat-label">Projekte</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number">8</span>
+                  <span class="stat-label">Kategorien</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number">16</span>
+                  <span class="stat-label">Jahre</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number">1.</span>
+                  <span class="stat-label">Lehrjahr</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="face top"><span class="cube-code">Herzlich Willkommen!</span></div>
+          <div class="face bottom"><span class="cube-code">Philippe's Portfolio</span></div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- HORIZONTAL SCROLL PROJECTS -->
+    <section class="project-horizontal-scroll">
+      <div class="horizontal-sticky-container">
+        <div class="container horizontal-header-wrap">
+          <div class="section-header">
+            <span class="section-label">// Alle Arbeiten</span>
+            <h2 class="section-title">Ausgewählte Projekte</h2>
+            <p class="section-desc">Scrollen, um alle 10 Projekte zu entdecken.</p>
+          </div>
+        </div>
+        
+        <div class="horizontal-track-wrap">
+          <div class="horizontal-track" id="projectTrack">
+            <!-- 01 · Migros Prop Hunt -->
+            <article class="project-card h-card cat-games">
+              <a href="projekt-migrosprophunt.html" class="card-link-layer" aria-label="Migros Prop Hunt ansehen"></a>
+              <div class="card-thumb">
+                <img src="images/migrosprophunt.png" alt="Migros Prop Hunt" class="card-thumb-img">
+                <span class="card-badge">Games</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Migros Prop Hunt</h3>
+                <p class="card-desc">Ein kreatives Hide-and-Seek Spiel im Migros-Universum.</p>
+              </div>
+            </article>
+
+            <!-- 02 · Node.js -->
+            <article class="project-card h-card cat-backend">
+              <a href="projekt-nodejs.html" class="card-link-layer" aria-label="Node.js ansehen"></a>
+              <div class="card-thumb">
+                <img src="images/nodejs.png" alt="Node.js" class="card-thumb-img">
+                <span class="card-badge">Backend</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Node.js API Development</h3>
+                <p class="card-desc">Serverseitige Entwicklung von RESTful APIs.</p>
+              </div>
+            </article>
+
+            <!-- 03 · IoT -->
+            <article class="project-card h-card cat-iot">
+              <a href="projekt-iot.html" class="card-link-layer" aria-label="IoT ansehen"></a>
+              <div class="card-thumb">
+                <img src="images/iotioe.png" alt="Internet of Everything" class="card-thumb-img">
+                <span class="card-badge">IoT</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Internet of Everything</h3>
+                <p class="card-desc">Physische Geräte vernetzen und Daten visualisieren.</p>
+              </div>
+            </article>
+
+            <!-- 04 · Frontend -->
+            <article class="project-card h-card cat-frontend">
+              <a href="projekt-frontend.html" class="card-link-layer" aria-label="Frontend ansehen"></a>
+              <div class="card-thumb">
+                <img src="images/programmiergrundlagen2.png" alt="JavaScript Frontend" class="card-thumb-img">
+                <span class="card-badge">Frontend</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">JS Frontend</h3>
+                <p class="card-desc">Dynamische Webseiten mit reinem JavaScript.</p>
+              </div>
+            </article>
+
+            <!-- 05 · Python -->
+            <article class="project-card h-card cat-programming">
+              <a href="projekt-python.html" class="card-link-layer" aria-label="Python ansehen"></a>
+              <div class="card-thumb">
+                <img src="images/python.png" alt="Python" class="card-thumb-img">
+                <span class="card-badge">Python</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Python Crashcourse</h3>
+                <p class="card-desc">Schnelleinstieg in die Programmiersprache Python.</p>
+              </div>
+            </article>
+
+            <!-- 06 · Database -->
+            <article class="project-card h-card cat-database">
+              <a href="projekt-database.html" class="card-link-layer" aria-label="Database ansehen"></a>
+              <div class="card-thumb">
+                <img src="images/uml.png" alt="Database" class="card-thumb-img">
+                <span class="card-badge">Database</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Datenbanken & UML</h3>
+                <p class="card-desc">Relationale Datenbanken entwerfen und modellieren.</p>
+              </div>
+            </article>
+
+            <!-- 07 · Office -->
+            <article class="project-card h-card cat-tools">
+              <a href="projekt-office.html" class="card-link-layer" aria-label="Office ansehen"></a>
+              <div class="card-thumb">
+                <img src="images/powerpoint.png" alt="Office" class="card-thumb-img">
+                <span class="card-badge">Tools</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Microsoft Office</h3>
+                <p class="card-desc">Professionelle Präsentationen mit PowerPoint.</p>
+              </div>
+            </article>
+
+            <!-- 08 · Programming I -->
+            <article class="project-card h-card cat-programming">
+              <a href="projekt-programming1.html" class="card-link-layer" aria-label="Programming ansehen"></a>
+              <div class="card-thumb">
+                <img src="images/programmiergrundlagen.png" alt="Programming" class="card-thumb-img">
+                <span class="card-badge">Programming</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Programmiergrundlagen I</h3>
+                <p class="card-desc">Erste Schritte: Variablen, Schleifen und Funktionen.</p>
+              </div>
+            </article>
+
+            <!-- 09 · Dev Fundamentals -->
+            <article class="project-card h-card cat-programming">
+              <a href="projekt-dev-fundamentals.html" class="card-link-layer" aria-label="Dev Fund. ansehen"></a>
+              <div class="card-thumb">
+                <img src="images/systemdevolopment.png" alt="Dev Fundamentals" class="card-thumb-img">
+                <span class="card-badge">Systems</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Development Fundamentals</h3>
+                <p class="card-desc">Git, Clean Code und Entwicklungsprozesse.</p>
+              </div>
+            </article>
+
+            <!-- 10 · Windows Internals -->
+            <article class="project-card h-card cat-systems">
+              <a href="projekt-windows.html" class="card-link-layer" aria-label="Windows ansehen"></a>
+              <div class="card-thumb">
+                <img src="images/windowsregistery.png" alt="Windows" class="card-thumb-img">
+                <span class="card-badge">Systems</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Windows Internals</h3>
+                <p class="card-desc">Tiefes Verständnis des Windows-Betriebssystems.</p>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- CATEGORIES -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">// Themenbereiche</span>
+          <h2 class="section-title">Projektbereiche</h2>
+          <p class="section-desc">Meine Projekte decken verschiedene Bereiche der Informatik und Applikationsentwicklung ab.</p>
+        </div>
+
+        <div class="categories-grid">
+          <a href="projekte.html" class="category-card cat-games">
+            <div class="category-icon">GMS</div>
+            <div class="category-text">
+              <p class="category-name">Games</p>
+              <p class="category-count">1 Projekt</p>
+            </div>
+          </a>
+          <a href="projekte.html" class="category-card cat-backend">
+            <div class="category-icon">BE</div>
+            <div class="category-text">
+              <p class="category-name">Backend</p>
+              <p class="category-count">1 Projekt</p>
+            </div>
+          </a>
+          <a href="projekte.html" class="category-card cat-iot">
+            <div class="category-icon">IoT</div>
+            <div class="category-text">
+              <p class="category-name">IoT</p>
+              <p class="category-count">1 Projekt</p>
+            </div>
+          </a>
+          <a href="projekte.html" class="category-card cat-frontend">
+            <div class="category-icon">FE</div>
+            <div class="category-text">
+              <p class="category-name">Frontend</p>
+              <p class="category-count">1 Projekt</p>
+            </div>
+          </a>
+          <a href="projekte.html" class="category-card cat-programming">
+            <div class="category-icon">PR</div>
+            <div class="category-text">
+              <p class="category-name">Programming</p>
+              <p class="category-count">3 Projekte</p>
+            </div>
+          </a>
+          <a href="projekte.html" class="category-card cat-database">
+            <div class="category-icon">DB</div>
+            <div class="category-text">
+              <p class="category-name">Database</p>
+              <p class="category-count">1 Projekt</p>
+            </div>
+          </a>
+          <a href="projekte.html" class="category-card cat-tools">
+            <div class="category-icon">TL</div>
+            <div class="category-text">
+              <p class="category-name">Tools</p>
+              <p class="category-count">1 Projekt</p>
+            </div>
+          </a>
+          <a href="projekte.html" class="category-card cat-systems">
+            <div class="category-icon">SY</div>
+            <div class="category-text">
+              <p class="category-name">Systems</p>
+              <p class="category-count">1 Projekt</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+
+  </main>
+
+  <!-- ====================================================
+       FOOTER
+       ==================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="site-logo" style="margin-bottom: var(--sp-sm); display: inline-block;">
+            <img src="images/logo.png" alt="Philippe.dev Logo" style="height: 48px; width: auto; object-fit: contain;">
+          </a>
+          <p>Informatiker Applikationsentwickler EFZ<br>Lehrling bei der MGB · BMZ</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html"    class="footer-link">Home</a></li>
+            <li><a href="projekte.html" class="footer-link">Projekte</a></li>
+            <li><a href="kontakt.html"  class="footer-link">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Kontakt</h4>
+          <ul class="footer-links">
+            <li><a href="kontakt.html"                         class="footer-link">Kontaktformular</a></li>
+            <li><a href="mailto:philippesaxer8@gmail.com"      class="footer-link">E-Mail schreiben</a></li>
+          </ul>
+        </div>
+        <div class="footer-col newsletter-col">
+          <h4>Newsletter</h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: var(--sp-md);">Immer auf dem Laufenden bleiben.</p>
+          <form class="footer-newsletter-form" action="mailto:philippesaxer8@gmail.com" method="post" enctype="text/plain">
+            <input type="email" name="email" placeholder="E-Mail Adresse" required class="footer-newsletter-input">
+            <button type="submit" class="footer-newsletter-btn">Abonnieren</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2025 Philippe Saxer.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Apple-Style Scroll Reveal Animation
+    document.addEventListener("DOMContentLoaded", () => {
+      const observerOptions = {
+        threshold: 0.15,
+        rootMargin: "0px 0px -10% 0px"
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          // Add or remove the active class depending on visibility
+          if (entry.isIntersecting) {
+            entry.target.classList.add("reveal-active");
+          } else {
+            // Optional: remove class when scrolling past to animate again
+            entry.target.classList.remove("reveal-active");
+          }
+        });
+      }, observerOptions);
+
+      // Select elements to animate
+      const sections = document.querySelectorAll("section:not(.hero)");
+      const cards = document.querySelectorAll(".project-card, .category-card");
+      
+      sections.forEach((el, index) => {
+        // Alternate directions for sections
+        if (index % 2 === 0) {
+          el.classList.add("reveal-left");
+        } else {
+          el.classList.add("reveal-right");
+        }
+        observer.observe(el);
+      });
+
+      cards.forEach((el, index) => {
+        el.classList.add("reveal-up");
+        el.style.transitionDelay = `${(index % 3) * 0.1}s`;
+        observer.observe(el);
+      });
+      
+      // Crazy Hero Animation observer
+      const crazyObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("hero-revealed");
+          } else {
+            entry.target.classList.remove("hero-revealed");
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      const hero = document.querySelector(".scroll-hero");
+      if (hero) crazyObserver.observe(hero);
+
+      // Scroll-Driven and Mouse-Driven 3D Cube Rotation
+      const heroCube = document.getElementById("heroCube");
+      const cubeContainer = document.getElementById("cubeContainer");
+      
+      if (heroCube && cubeContainer) {
+        let scrollRotationY = 0;
+        let mouseRotationX = 0;
+        let mouseRotationY = 0;
+
+        // Scroll controls the main Y-axis spin
+        window.addEventListener("scroll", () => {
+          scrollRotationY = window.scrollY * 0.15; 
+          updateCubeTransform();
+        });
+
+        // Mouse move controls the 3D tilt (parallax effect)
+        document.addEventListener("mousemove", (e) => {
+          // Normalize mouse coordinates from -1 to 1 based on window center
+          const x = (e.clientX / window.innerWidth - 0.5) * 2;
+          const y = (e.clientY / window.innerHeight - 0.5) * 2;
+          
+          // Max tilt of 25 degrees
+          mouseRotationY = x * 25; 
+          mouseRotationX = -y * 25; // Negative so mouse up tilts up
+          
+          updateCubeTransform();
+        });
+
+        function updateCubeTransform() {
+          // Combine the continuous scroll rotation Y with the hover tilt
+          const totalY = scrollRotationY + mouseRotationY;
+          heroCube.style.transform = `rotateX(${mouseRotationX}deg) rotateY(${totalY}deg)`;
+        }
+      }
+    });
+
+    // Hide Loading Screen
+    window.addEventListener("load", () => {
+      const loader = document.getElementById("page-loader");
+      if (loader) {
+        setTimeout(() => {
+          loader.classList.add("loader-hidden");
+        }, 500);
+      }
+    });
+  </script>
+  <script src="js/main.js"></script>
+</body>
+</html>

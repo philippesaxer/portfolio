@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kontakt aufnehmen mit Philippe Saxer — Informatiker Applikationsentwickler EFZ.">
+  <title>Kontakt — Philippe Saxer</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="icon" href="images/logo.png" type="image/png">
+</head>
+<body style="overflow-x: hidden;">
+
+  <!-- LOADING SCREEN -->
+  <div id="page-loader">
+    <img src="images/logo.png" alt="Loading..." class="loader-logo">
+  </div>
+
+  <!-- ====================================================
+       HEADER
+       ==================================================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="site-logo">
+        <img src="images/logo.png" alt="Philippe.dev Logo" style="height: 32px; width: auto; object-fit: contain;">
+      </a>
+      <nav class="site-nav">
+        <a href="index.html"    class="nav-link">Home</a>
+        <a href="projekte.html" class="nav-link">Projekte</a>
+        <a href="kontakt.html"  class="nav-cta active">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ====================================================
+       MAIN
+       ==================================================== -->
+  <main>
+
+    <!-- PAGE HERO -->
+    <div class="page-hero">
+      <div class="container">
+        <span class="section-label">// Kontakt</span>
+        <h1>Schreib mir</h1>
+        <p>Ich freue mich auf Ihre Nachricht.</p>
+      </div>
+    </div>
+
+    <!-- CONTACT SECTION -->
+    <section class="section">
+      <div class="container">
+        <div class="contact-layout scroll-reveal">
+
+          <!-- Contact Form -->
+          <div class="contact-form-wrapper">
+            <div class="contact-card">
+              <div class="contact-card-header">
+                <span class="section-label">// Nachricht senden</span>
+                <h2>Kontaktformular</h2>
+                <p>Füllen Sie das Formular aus und ich melde mich so schnell wie möglich bei Ihnen.</p>
+              </div>
+              <form class="contact-form" action="mailto:philippesaxer8@gmail.com" method="post" enctype="text/plain">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="contact-name" class="form-label">Name</label>
+                    <input type="text" id="contact-name" name="name" class="form-input" placeholder="Dein Name" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="contact-email" class="form-label">E-Mail</label>
+                    <input type="email" id="contact-email" name="email" class="form-input" placeholder="deine@email.com" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="contact-subject" class="form-label">Betreff</label>
+                  <select id="contact-subject" name="betreff" class="form-input form-select" required>
+                    <option value="" disabled selected>Wähle ein Thema...</option>
+                    <option value="Allgemeine Anfrage">Allgemeine Anfrage</option>
+                    <option value="Projekt-Frage">Frage zu einem Projekt</option>
+                    <option value="Zusammenarbeit">Zusammenarbeit</option>
+                    <option value="Sonstiges">Sonstiges</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="contact-message" class="form-label">Nachricht</label>
+                  <textarea id="contact-message" name="nachricht" class="form-textarea" rows="6" placeholder="Deine Nachricht..." required></textarea>
+                </div>
+                <button type="submit" class="btn-primary btn-full">Nachricht senden</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Contact Info Sidebar -->
+          <aside class="contact-info-sidebar">
+            <div class="contact-info-card scroll-reveal">
+              <div class="contact-info-icon">✉</div>
+              <h3>E-Mail</h3>
+              <p>Schreib mir direkt eine E-Mail:</p>
+              <a href="mailto:philippesaxer8@gmail.com" class="contact-info-link">philippesaxer8@gmail.com</a>
+            </div>
+
+            <div class="contact-profile-card scroll-reveal">
+              <span class="section-label" style="display: block; margin-bottom: var(--sp-sm);">// Team</span>
+              <img src="images/philippesaxer.png" alt="Philippe Saxer" style="width: 100%; height: auto; border-radius: var(--r-lg); border: 1px solid var(--border-subtle); object-fit: cover; background: var(--bg-surface);">
+              <h3 style="margin-top: var(--sp-md); font-size: 1.25rem; color: var(--text-primary);">Philippe Saxer</h3>
+              <p style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--cyan); margin-top: 4px;">Informatiker Applikationsentwicklung</p>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====================================================
+       FOOTER
+       ==================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="site-logo" style="margin-bottom: var(--sp-sm); display: inline-block;">
+            <img src="images/logo.png" alt="Philippe.dev Logo" style="height: 48px; width: auto; object-fit: contain;">
+          </a>
+          <p>Informatiker Applikationsentwickler EFZ<br>Lehrling bei der MGB · BMZ</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html"    class="footer-link">Home</a></li>
+            <li><a href="projekte.html" class="footer-link">Projekte</a></li>
+            <li><a href="kontakt.html"  class="footer-link">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Kategorien</h4>
+          <ul class="footer-links">
+            <li><a href="projekte.html" class="footer-link">Games &amp; Systems</a></li>
+            <li><a href="projekte.html" class="footer-link">Backend &amp; Frontend</a></li>
+            <li><a href="projekte.html" class="footer-link">Programming &amp; IoT</a></li>
+            <li><a href="projekte.html" class="footer-link">Database &amp; Tools</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Kontakt</h4>
+          <ul class="footer-links">
+            <li><a href="kontakt.html"                           class="footer-link">Kontaktformular</a></li>
+            <li><a href="mailto:philippesaxer8@gmail.com"        class="footer-link">E-Mail schreiben</a></li>
+          </ul>
+        </div>
+        <div class="footer-col newsletter-col">
+          <h4>Newsletter</h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: var(--sp-md);">Immer auf dem Laufenden bleiben.</p>
+          <form class="footer-newsletter-form" action="mailto:philippesaxer8@gmail.com" method="post" enctype="text/plain">
+            <input type="email" name="email" placeholder="E-Mail Adresse" required class="footer-newsletter-input">
+            <button type="submit" class="footer-newsletter-btn">Abonnieren</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2025 Philippe Saxer. Alle Rechte vorbehalten.</p>
+        <div class="footer-status">
+          <span class="status-dot"></span>
+          <span>Verfügbar für Anfragen</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Apple-Style Scroll Reveal Animation
+    document.addEventListener("DOMContentLoaded", () => {
+      const observerOptions = {
+        threshold: 0.15,
+        rootMargin: "0px 0px -10% 0px"
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          // Add or remove the active class depending on visibility
+          if (entry.isIntersecting) {
+            entry.target.classList.add("reveal-active");
+          } else {
+            // Optional: remove class when scrolling past to animate again
+            entry.target.classList.remove("reveal-active");
+          }
+        });
+      }, observerOptions);
+
+      // Select elements to animate
+      const cards = document.querySelectorAll(".contact-info-card, .contact-card");
+      
+      cards.forEach((el, index) => {
+        el.classList.add("reveal-up");
+        el.style.transitionDelay = `${(index % 3) * 0.1}s`;
+        observer.observe(el);
+      });
+    });
+
+    // Hide Loading Screen
+    window.addEventListener("load", () => {
+      const loader = document.getElementById("page-loader");
+      if (loader) {
+        setTimeout(() => {
+          loader.classList.add("loader-hidden");
+        }, 500);
+      }
+    });
+  </script>
+  <script src="js/main.js"></script>
+</body>
+</html>
