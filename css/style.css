@@ -113,6 +113,7 @@ body {
   background-color: transparent;
   overflow-x: hidden;
   min-height: 100vh;
+  position: relative;
 }
 
 /* ============================================================
@@ -120,16 +121,19 @@ body {
    ============================================================ */
 body::before {
   content: '';
-  position: fixed;
-  inset: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: -999;
   pointer-events: none;
   background:
-    /* Top Center - Ultra Intense Neon Glow */
-    radial-gradient(circle at 50% 0%, rgba(0, 242, 255, 0.45) 0%, transparent 75%),
-    /* Top-Down Intensity Gradient */
-    linear-gradient(to bottom, #00c3ff 0%, #040d21 35%, #020617 100%);
-  background-size: 100% 100%;
+    /* Top Center - High-Energy Start */
+    radial-gradient(circle at 50% 0%, rgba(0, 242, 255, 0.45) 0%, transparent 1500px),
+    /* Continuous Full-Page Gradient */
+    linear-gradient(to bottom, #00c3ff 0%, #040d21 15%, #020617 100%);
+  background-attachment: scroll;
 }
 
 img {
