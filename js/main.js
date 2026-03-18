@@ -4,6 +4,17 @@
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Check for category filter in URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const filterParam = urlParams.get('filter');
+    if (filterParam) {
+        // Attempt to find radio button on projekte.html
+        const filterRadio = document.getElementById('filter-' + filterParam);
+        if (filterRadio) {
+            filterRadio.checked = true;
+        }
+    }
+
     const header = document.querySelector('.site-header');
     
     // Scroll handling for header shrink effect
@@ -26,6 +37,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (horizontalSection && projectTrack) {
         const updateHorizontalScroll = () => {
+            if (window.innerWidth <= 768) {
+                projectTrack.style.transform = '';
+                return;
+            }
             const sectionRect = horizontalSection.getBoundingClientRect();
             const sectionOffsetTop = horizontalSection.offsetTop;
             const scrollDistance = window.scrollY - sectionOffsetTop;

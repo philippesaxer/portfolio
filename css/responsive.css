@@ -97,6 +97,40 @@
     grid-template-columns: 1fr;
   }
 
+  /* Horizontal Scroll Section - Override for mobile */
+  .project-horizontal-scroll {
+    height: auto !important; 
+  }
+
+  .horizontal-sticky-container {
+    position: relative !important;
+    height: auto !important;
+  }
+
+  .horizontal-track-wrap {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    -webkit-overflow-scrolling: touch;
+    width: 100vw;
+    margin-left: -1.25rem; /* Negate container padding */
+    padding-left: 1.25rem;
+  }
+
+  .horizontal-track {
+    width: max-content;
+    padding-right: 1.25rem; /* Space at end */
+    gap: 1rem;
+    display: flex;
+  }
+
+  .horizontal-track .project-card {
+    scroll-snap-align: center;
+    width: 85vw; /* Almost full width but peeking next card */
+    flex-shrink: 0;
+  }
+
   .categories-grid {
     grid-template-columns: repeat(2, 1fr);
   }
