@@ -36,12 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const projectTrack = document.getElementById('projectTrack');
 
     if (horizontalSection && projectTrack) {
-        const updateHorizontalScroll = () => {
-            if (window.innerWidth <= 768) {
-                projectTrack.style.transform = '';
-                return;
-            }
-            const sectionRect = horizontalSection.getBoundingClientRect();
+        let isScrolling = false;
+        
+        const computeHorizontalScroll = () => {
             const sectionOffsetTop = horizontalSection.offsetTop;
             const scrollDistance = window.scrollY - sectionOffsetTop;
             
@@ -57,6 +54,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const maxTrackMove = projectTrack.scrollWidth - window.innerWidth + 80; // plus some padding
             
             projectTrack.style.transform = `translateX(-${progress * maxTrackMove}px)`;
+            isScrolling = false;
+        };
+
+        const updateHorizontalScroll = () => {
+            if (!isScrolling) {
+                isScrolling = true;
+                window.requestAnimationFrame(computeHorizontalScroll);
+            }
         };
 
         window.addEventListener('scroll', updateHorizontalScroll, { passive: true });

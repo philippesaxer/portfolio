@@ -63,12 +63,6 @@
    ============================================================ */
 
 @media (max-width: 768px) {
-  html, body {
-    overflow-x: hidden !important;
-    width: 100%;
-    position: relative;
-  }
-
   :root {
     --sp-4xl: 3rem;
     --sp-3xl: 2.25rem;
@@ -117,43 +111,10 @@
     grid-template-columns: 1fr;
   }
 
-  /* Horizontal Scroll Section - Override for mobile */
-  .project-horizontal-scroll {
-    height: auto !important; 
-    overflow: hidden;
-    width: 100%;
-  }
-
-  .horizontal-sticky-container {
-    position: relative !important;
-    height: auto !important;
-  }
-
-  .horizontal-track-wrap {
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    margin-bottom: 2rem;
-    padding-bottom: 1rem;
-    -webkit-overflow-scrolling: touch;
-    width: calc(100% + 2.5rem); /* Prevents document horizontal scrolling vs 100vw */
-    margin-left: -1.25rem; /* Negate container padding */
-    padding-left: 1.25rem;
-  }
-
-  .horizontal-track {
-    width: max-content;
-    padding-right: 1.25rem; /* Space at end */
-    gap: 1.25rem;
-    display: flex;
-  }
-
-  .horizontal-track .project-card {
-    scroll-snap-align: center;
-    width: 82vw; /* Almost full width but peeking next card */
-    max-width: 320px;
-    flex-shrink: 0;
-    height: auto;
-    min-height: 420px; /* Fixes height: 0 collapse when parent is height: auto */
+  /* Adjust horizontal track elements */
+  .h-card {
+    flex: 0 0 85vw; /* Make cards fit smaller screens gracefully */
+    max-width: 380px;
   }
 
   .categories-grid {
