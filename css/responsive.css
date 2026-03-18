@@ -63,6 +63,12 @@
    ============================================================ */
 
 @media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden !important;
+    width: 100%;
+    position: relative;
+  }
+
   :root {
     --sp-4xl: 3rem;
     --sp-3xl: 2.25rem;
@@ -88,6 +94,15 @@
   .cube-container {
     transform: scale(0.65); /* Fixes cube being too big and buggy on small screens */
   }
+
+  @keyframes mobileCubeSpin {
+    from { transform: rotateY(0deg) rotateX(-10deg); }
+    to { transform: rotateY(360deg) rotateX(-10deg); }
+  }
+
+  .cube {
+    animation: mobileCubeSpin 25s linear infinite !important;
+  }
   .hero-stats {
     gap: 1.5rem;
     flex-wrap: wrap;
@@ -105,6 +120,8 @@
   /* Horizontal Scroll Section - Override for mobile */
   .project-horizontal-scroll {
     height: auto !important; 
+    overflow: hidden;
+    width: 100%;
   }
 
   .horizontal-sticky-container {

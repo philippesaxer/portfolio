@@ -454,10 +454,15 @@
         });
 
         function updateCubeTransform() {
+          if (window.innerWidth <= 768) {
+            heroCube.style.transform = '';
+            return;
+          }
           // Combine the continuous scroll rotation Y with the hover tilt
           const totalY = scrollRotationY + mouseRotationY;
           heroCube.style.transform = `rotateX(${mouseRotationX}deg) rotateY(${totalY}deg)`;
         }
+        updateCubeTransform();
       }
     });
 
