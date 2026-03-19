@@ -89,14 +89,7 @@
     transform: scale(0.65); /* Fixes cube being too big and buggy on small screens */
   }
 
-  @keyframes mobileCubeSpin {
-    from { transform: rotateY(0deg) rotateX(-10deg); }
-    to { transform: rotateY(360deg) rotateX(-10deg); }
-  }
-
-  .cube {
-    animation: mobileCubeSpin 25s linear infinite !important;
-  }
+  /* Cube rotation is now driven by scroll via JS, just like desktop */
   .hero-stats {
     gap: 1.5rem;
     flex-wrap: wrap;

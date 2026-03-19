@@ -319,6 +319,37 @@
         }, 500);
       }
     });
+    // Persistent Filter Logic
+    document.addEventListener("DOMContentLoaded", () => {
+      const radios = document.querySelectorAll('input[name="category-filter"]');
+      
+      // 1. On Load: Check URL parameters
+      const urlParams = new URLSearchParams(window.location.search);
+      const filterParam = urlParams.get('filter');
+      
+      if (filterParam) {
+        const targetRadio = document.getElementById(`filter-${filterParam}`);
+        if (targetRadio) {
+          targetRadio.checked = true;
+        }
+      }
+
+      // 2. On Change: Update URL
+      radios.forEach(radio => {
+        radio.addEventListener('change', (e) => {
+          if (e.target.checked) {
+            const filterValue = e.target.id.replace('filter-', '');
+            const newUrl = new URL(window.location);
+            if (filterValue === 'all') {
+              newUrl.searchParams.delete('filter');
+            } else {
+              newUrl.searchParams.set('filter', filterValue);
+            }
+            window.history.replaceState({}, '', newUrl);
+          }
+        });
+      });
+    });
   </script>
   <script src="js/main.js"></script>
 </body>
