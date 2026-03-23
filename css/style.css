@@ -103,7 +103,6 @@
 html {
   scroll-behavior: smooth;
   background-color: var(--bg-base);
-  overflow-x: hidden;
 }
 
 body {
@@ -743,49 +742,49 @@ p {
 }
 
 .cat-games .card-badge {
-  background: rgba(255, 107, 107, 0.12);
+  background: #000;
   color: var(--cat-games);
   border: 1px solid rgba(255, 107, 107, 0.28);
 }
 
 .cat-backend .card-badge {
-  background: rgba(0, 229, 255, 0.08);
+  background: #000;
   color: var(--cat-backend);
   border: 1px solid rgba(0, 229, 255, 0.25);
 }
 
 .cat-iot .card-badge {
-  background: rgba(0, 255, 136, 0.08);
+  background: #000;
   color: var(--cat-iot);
   border: 1px solid rgba(0, 255, 136, 0.25);
 }
 
 .cat-frontend .card-badge {
-  background: rgba(245, 158, 11, 0.1);
+  background: #000;
   color: var(--cat-frontend);
   border: 1px solid rgba(245, 158, 11, 0.28);
 }
 
 .cat-programming .card-badge {
-  background: rgba(167, 139, 250, 0.1);
+  background: #000;
   color: var(--cat-programming);
   border: 1px solid rgba(167, 139, 250, 0.28);
 }
 
 .cat-database .card-badge {
-  background: rgba(251, 113, 133, 0.1);
+  background: #000;
   color: var(--cat-database);
   border: 1px solid rgba(251, 113, 133, 0.28);
 }
 
 .cat-tools .card-badge {
-  background: rgba(96, 165, 250, 0.1);
+  background: #000;
   color: var(--cat-tools);
   border: 1px solid rgba(96, 165, 250, 0.28);
 }
 
 .cat-systems .card-badge {
-  background: rgba(52, 211, 153, 0.1);
+  background: #000;
   color: var(--cat-systems);
   border: 1px solid rgba(52, 211, 153, 0.28);
 }
@@ -979,24 +978,30 @@ p {
 }
 
 .filter-btn:hover {
-  border-color: var(--cyan);
-  color: var(--cyan);
+  border-color: var(--text-primary);
+  color: var(--text-primary);
 }
 
+label[for="filter-all"]:hover { border-color: var(--text-primary); color: var(--text-primary); }
+label[for="filter-games"]:hover { border-color: var(--cat-games); color: var(--cat-games); }
+label[for="filter-backend"]:hover { border-color: var(--cat-backend); color: var(--cat-backend); }
+label[for="filter-iot"]:hover { border-color: var(--cat-iot); color: var(--cat-iot); }
+label[for="filter-frontend"]:hover { border-color: var(--cat-frontend); color: var(--cat-frontend); }
+label[for="filter-programming"]:hover { border-color: var(--cat-programming); color: var(--cat-programming); }
+label[for="filter-database"]:hover { border-color: var(--cat-database); color: var(--cat-database); }
+label[for="filter-tools"]:hover { border-color: var(--cat-tools); color: var(--cat-tools); }
+label[for="filter-systems"]:hover { border-color: var(--cat-systems); color: var(--cat-systems); }
+
 /* Active filter button highlight */
-#filter-all:checked~.filter-bar-wrap .filter-bar label[for="filter-all"],
-#filter-games:checked~.filter-bar-wrap .filter-bar label[for="filter-games"],
-#filter-backend:checked~.filter-bar-wrap .filter-bar label[for="filter-backend"],
-#filter-iot:checked~.filter-bar-wrap .filter-bar label[for="filter-iot"],
-#filter-frontend:checked~.filter-bar-wrap .filter-bar label[for="filter-frontend"],
-#filter-programming:checked~.filter-bar-wrap .filter-bar label[for="filter-programming"],
-#filter-database:checked~.filter-bar-wrap .filter-bar label[for="filter-database"],
-#filter-tools:checked~.filter-bar-wrap .filter-bar label[for="filter-tools"],
-#filter-systems:checked~.filter-bar-wrap .filter-bar label[for="filter-systems"] {
-  background: var(--cyan);
-  border-color: var(--cyan);
-  color: #fff;
-}
+#filter-all:checked~.filter-bar-wrap .filter-bar label[for="filter-all"] { background: var(--text-primary); border-color: var(--text-primary); color: #000; }
+#filter-games:checked~.filter-bar-wrap .filter-bar label[for="filter-games"] { background: var(--cat-games); border-color: var(--cat-games); color: #000; }
+#filter-backend:checked~.filter-bar-wrap .filter-bar label[for="filter-backend"] { background: var(--cat-backend); border-color: var(--cat-backend); color: #000; }
+#filter-iot:checked~.filter-bar-wrap .filter-bar label[for="filter-iot"] { background: var(--cat-iot); border-color: var(--cat-iot); color: #000; }
+#filter-frontend:checked~.filter-bar-wrap .filter-bar label[for="filter-frontend"] { background: var(--cat-frontend); border-color: var(--cat-frontend); color: #000; }
+#filter-programming:checked~.filter-bar-wrap .filter-bar label[for="filter-programming"] { background: var(--cat-programming); border-color: var(--cat-programming); color: #000; }
+#filter-database:checked~.filter-bar-wrap .filter-bar label[for="filter-database"] { background: var(--cat-database); border-color: var(--cat-database); color: #000; }
+#filter-tools:checked~.filter-bar-wrap .filter-bar label[for="filter-tools"] { background: var(--cat-tools); border-color: var(--cat-tools); color: #000; }
+#filter-systems:checked~.filter-bar-wrap .filter-bar label[for="filter-systems"] { background: var(--cat-systems); border-color: var(--cat-systems); color: #000; }
 
 /* Hide cards that don't match the active filter */
 #filter-games:checked~.grid-wrap .project-card:not(.cat-games),
@@ -1811,7 +1816,7 @@ p {
   display: grid;
   grid-template-columns: 1fr 340px;
   gap: var(--sp-3xl);
-  align-items: start;
+  align-items: stretch;
 }
 
 .contact-form-wrapper {
@@ -1823,6 +1828,7 @@ p {
   border: 1px solid var(--border-subtle);
   border-radius: var(--r-xl);
   padding: var(--sp-3xl);
+  height: 100%;
 }
 
 .contact-card-header {
@@ -1854,6 +1860,7 @@ p {
 .contact-info-sidebar {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: var(--sp-md);
 }
 
