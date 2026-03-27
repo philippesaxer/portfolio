@@ -103,6 +103,8 @@
 html {
   scroll-behavior: smooth;
   background-color: var(--bg-base);
+  scrollbar-width: thin;
+  scrollbar-color: var(--cyan-dim) var(--bg-base);
 }
 
 body {
@@ -114,6 +116,29 @@ body {
   overflow-x: hidden;
   min-height: 100vh;
   position: relative;
+}
+
+/* ============================================================
+   CUSTOM SCROLLBAR
+   ============================================================ */
+::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+  border-left: 1px solid var(--border-subtle);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--cyan-dim), var(--cyan));
+  border-radius: var(--r-pill);
+  border: 4px solid var(--bg-base);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, var(--cyan), var(--cat-tools));
 }
 
 /* ============================================================
@@ -203,7 +228,7 @@ p {
   padding: var(--sp-4xl) 0;
 }
 
-.page-hero + .section {
+.page-hero+.section {
   padding-top: var(--sp-xl);
 }
 
@@ -580,7 +605,8 @@ p {
 
 /* Horizontal Scroll Specifics */
 .project-horizontal-scroll {
-  height: 500vh; /* Long scroll area */
+  height: 500vh;
+  /* Long scroll area */
   position: relative;
 }
 
@@ -610,7 +636,8 @@ p {
 }
 
 .h-card {
-  flex: 0 0 400px; /* Fixed width for horizontal cards */
+  flex: 0 0 400px;
+  /* Fixed width for horizontal cards */
   max-width: 400px;
 }
 
@@ -982,26 +1009,105 @@ p {
   color: var(--text-primary);
 }
 
-label[for="filter-all"]:hover { border-color: var(--text-primary); color: var(--text-primary); }
-label[for="filter-games"]:hover { border-color: var(--cat-games); color: var(--cat-games); }
-label[for="filter-backend"]:hover { border-color: var(--cat-backend); color: var(--cat-backend); }
-label[for="filter-iot"]:hover { border-color: var(--cat-iot); color: var(--cat-iot); }
-label[for="filter-frontend"]:hover { border-color: var(--cat-frontend); color: var(--cat-frontend); }
-label[for="filter-programming"]:hover { border-color: var(--cat-programming); color: var(--cat-programming); }
-label[for="filter-database"]:hover { border-color: var(--cat-database); color: var(--cat-database); }
-label[for="filter-tools"]:hover { border-color: var(--cat-tools); color: var(--cat-tools); }
-label[for="filter-systems"]:hover { border-color: var(--cat-systems); color: var(--cat-systems); }
+label[for="filter-all"]:hover {
+  border-color: var(--text-primary);
+  color: var(--text-primary);
+}
+
+label[for="filter-games"]:hover {
+  border-color: var(--cat-games);
+  color: var(--cat-games);
+}
+
+label[for="filter-backend"]:hover {
+  border-color: var(--cat-backend);
+  color: var(--cat-backend);
+}
+
+label[for="filter-iot"]:hover {
+  border-color: var(--cat-iot);
+  color: var(--cat-iot);
+}
+
+label[for="filter-frontend"]:hover {
+  border-color: var(--cat-frontend);
+  color: var(--cat-frontend);
+}
+
+label[for="filter-programming"]:hover {
+  border-color: var(--cat-programming);
+  color: var(--cat-programming);
+}
+
+label[for="filter-database"]:hover {
+  border-color: var(--cat-database);
+  color: var(--cat-database);
+}
+
+label[for="filter-tools"]:hover {
+  border-color: var(--cat-tools);
+  color: var(--cat-tools);
+}
+
+label[for="filter-systems"]:hover {
+  border-color: var(--cat-systems);
+  color: var(--cat-systems);
+}
 
 /* Active filter button highlight */
-#filter-all:checked~.filter-bar-wrap .filter-bar label[for="filter-all"] { background: var(--text-primary); border-color: var(--text-primary); color: #000; }
-#filter-games:checked~.filter-bar-wrap .filter-bar label[for="filter-games"] { background: var(--cat-games); border-color: var(--cat-games); color: #000; }
-#filter-backend:checked~.filter-bar-wrap .filter-bar label[for="filter-backend"] { background: var(--cat-backend); border-color: var(--cat-backend); color: #000; }
-#filter-iot:checked~.filter-bar-wrap .filter-bar label[for="filter-iot"] { background: var(--cat-iot); border-color: var(--cat-iot); color: #000; }
-#filter-frontend:checked~.filter-bar-wrap .filter-bar label[for="filter-frontend"] { background: var(--cat-frontend); border-color: var(--cat-frontend); color: #000; }
-#filter-programming:checked~.filter-bar-wrap .filter-bar label[for="filter-programming"] { background: var(--cat-programming); border-color: var(--cat-programming); color: #000; }
-#filter-database:checked~.filter-bar-wrap .filter-bar label[for="filter-database"] { background: var(--cat-database); border-color: var(--cat-database); color: #000; }
-#filter-tools:checked~.filter-bar-wrap .filter-bar label[for="filter-tools"] { background: var(--cat-tools); border-color: var(--cat-tools); color: #000; }
-#filter-systems:checked~.filter-bar-wrap .filter-bar label[for="filter-systems"] { background: var(--cat-systems); border-color: var(--cat-systems); color: #000; }
+#filter-all:checked~.filter-bar-wrap .filter-bar label[for="filter-all"] {
+  background: var(--text-primary);
+  border-color: var(--text-primary);
+  color: #000;
+}
+
+#filter-games:checked~.filter-bar-wrap .filter-bar label[for="filter-games"] {
+  background: var(--cat-games);
+  border-color: var(--cat-games);
+  color: #000;
+}
+
+#filter-backend:checked~.filter-bar-wrap .filter-bar label[for="filter-backend"] {
+  background: var(--cat-backend);
+  border-color: var(--cat-backend);
+  color: #000;
+}
+
+#filter-iot:checked~.filter-bar-wrap .filter-bar label[for="filter-iot"] {
+  background: var(--cat-iot);
+  border-color: var(--cat-iot);
+  color: #000;
+}
+
+#filter-frontend:checked~.filter-bar-wrap .filter-bar label[for="filter-frontend"] {
+  background: var(--cat-frontend);
+  border-color: var(--cat-frontend);
+  color: #000;
+}
+
+#filter-programming:checked~.filter-bar-wrap .filter-bar label[for="filter-programming"] {
+  background: var(--cat-programming);
+  border-color: var(--cat-programming);
+  color: #000;
+}
+
+#filter-database:checked~.filter-bar-wrap .filter-bar label[for="filter-database"] {
+  background: var(--cat-database);
+  border-color: var(--cat-database);
+  color: #000;
+}
+
+#filter-tools:checked~.filter-bar-wrap .filter-bar label[for="filter-tools"] {
+  background: var(--cat-tools);
+  border-color: var(--cat-tools);
+  color: #000;
+}
+
+#filter-systems:checked~.filter-bar-wrap .filter-bar label[for="filter-systems"] {
+  background: var(--cat-systems);
+  border-color: var(--cat-systems);
+  color: #000;
+}
 
 /* Hide cards that don't match the active filter */
 #filter-games:checked~.grid-wrap .project-card:not(.cat-games),
@@ -1634,11 +1740,11 @@ label[for="filter-systems"]:hover { border-color: var(--cat-systems); color: var
     text-align: center;
     padding: var(--sp-2xl);
   }
-  
+
   .newsletter-content p {
     margin: 0 auto var(--sp-xl);
   }
-  
+
   .newsletter-form {
     width: 100%;
     flex-direction: column;
@@ -2038,9 +2144,12 @@ label[for="filter-systems"]:hover { border-color: var(--cat-systems); color: var
 }
 
 @keyframes floating {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-25px);
   }
