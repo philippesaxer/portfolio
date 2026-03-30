@@ -334,18 +334,36 @@ p {
   height: var(--header-height);
   display: flex;
   align-items: center;
-  background: rgba(0, 0, 0, 0.72);
-  backdrop-filter: blur(25px);
-  -webkit-backdrop-filter: blur(25px);
-  border-bottom: 1px solid var(--border-subtle);
+
+  /* Animierter, breiter linear-gradient Hintergrund (Dunkle Premium Blau Töne) */
+  background: linear-gradient(-45deg,
+      #000511, /* Extrem dunkles Nachtblau */
+      #010a1b, /* Tiefes Marineblau */
+      #001233, /* Dark Navy */
+      #002244, /* Deep Space Blue */
+      #003366, /* Edles Midnight Blue */
+      #002244, /* Weicher Übergang zurück */
+      #010a1b, /* Wieder tiefes Blau */
+      #000511  /* Zurück zum Ursprung für den nahtlosen Loop */
+  );
+  background-size: 400% 400%;
+  animation: nav-gradient-flow 15s ease infinite;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   transition: all var(--transition);
+}
+
+/* Keyframes für den fliessenden Gradient */
+@keyframes nav-gradient-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .site-header.header-scrolled {
   height: 60px;
-  background: rgba(0, 0, 0, 0.92);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06);
-  border-bottom-color: var(--border-default);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+  border-bottom-color: rgba(255, 255, 255, 0.2);
 }
 
 .header-inner {
@@ -357,14 +375,21 @@ p {
 
 .site-logo {
   font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-size: 1.35rem; /* Increased from 1.15rem */
   font-weight: 800;
   color: var(--text-primary);
   display: flex;
   align-items: center;
-  gap: 2px;
+  gap: 4px;
   letter-spacing: -0.01em;
   transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Make logo larger everywhere */
+.site-logo img {
+  height: 42px !important;
+  width: auto;
+  transition: all var(--transition);
 }
 
 .site-logo:active {
@@ -389,8 +414,10 @@ p {
 
 .nav-link {
   font-family: var(--font-body);
-  font-size: 0.875rem;
-  font-weight: 500;
+  font-size: 1.05rem;
+  /* Increased from 0.875rem */
+  font-weight: 600;
+  /* Increased from 500 */
   color: var(--text-secondary);
   text-transform: none;
   letter-spacing: 0;
@@ -401,10 +428,12 @@ p {
 .nav-link::after {
   content: '';
   position: absolute;
-  bottom: -4px;
+  bottom: -6px;
+  /* Adjusted for larger text */
   left: 0;
   width: 0;
-  height: 1px;
+  height: 2px;
+  /* Thicker underline */
   background: var(--cyan);
   transition: width var(--transition);
 }
@@ -420,12 +449,14 @@ p {
 }
 
 .nav-cta {
-  padding: 0.45rem 1.1rem;
+  padding: 0.6rem 1.4rem;
+  /* Increased padding */
   background: var(--cyan);
   border: none;
   border-radius: var(--r-pill);
   font-family: var(--font-body);
-  font-size: 0.82rem;
+  font-size: 1rem;
+  /* Increased from 0.82rem */
   font-weight: 600;
   color: #fff;
   text-transform: none;
@@ -2145,7 +2176,8 @@ label[for="filter-systems"]:hover {
   /* Centering */
   margin: 0 auto;
   animation: floating 8s ease-in-out infinite;
-  touch-action: pan-y; /* Allow vertical scroll on iOS */
+  touch-action: pan-y;
+  /* Allow vertical scroll on iOS */
   -webkit-touch-callout: none;
 }
 
@@ -2369,6 +2401,7 @@ label[for="filter-systems"]:hover {
 
 /* Disable magic focus on touch devices */
 @media (hover: none) {
+
   .projects-grid:has(.project-card:hover) .project-card:not(:hover),
   .categories-grid:has(.category-card:hover) .category-card:not(:hover),
   .horizontal-track:has(.h-card:hover) .h-card:not(:hover),
@@ -2429,18 +2462,23 @@ label[for="filter-systems"]:hover {
 }
 
 @keyframes blob-drift-1 {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translate(0, 0) scale(1) rotate(0deg);
     border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
   }
+
   25% {
     transform: translate(80px, 50px) scale(1.15) rotate(45deg);
     border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
   }
+
   50% {
     transform: translate(30px, 100px) scale(0.9) rotate(120deg);
     border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
   }
+
   75% {
     transform: translate(-40px, 60px) scale(1.1) rotate(200deg);
     border-radius: 50% 40% 50% 60% / 35% 55% 45% 65%;
@@ -2448,14 +2486,18 @@ label[for="filter-systems"]:hover {
 }
 
 @keyframes blob-drift-2 {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translate(0, 0) scale(1) rotate(0deg);
     border-radius: 50% 30% 60% 40% / 60% 40% 50% 50%;
   }
+
   33% {
     transform: translate(-70px, 60px) scale(1.2) rotate(-60deg);
     border-radius: 40% 60% 40% 60% / 50% 50% 60% 40%;
   }
+
   66% {
     transform: translate(50px, -40px) scale(0.85) rotate(-150deg);
     border-radius: 60% 40% 50% 50% / 40% 60% 40% 60%;
@@ -2463,22 +2505,28 @@ label[for="filter-systems"]:hover {
 }
 
 @keyframes blob-drift-3 {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translate(0, 0) scale(1) rotate(0deg);
     border-radius: 60% 40% 50% 50% / 50% 60% 40% 50%;
   }
+
   20% {
     transform: translate(60px, -30px) scale(1.1) rotate(72deg);
     border-radius: 40% 50% 60% 50% / 60% 40% 50% 60%;
   }
+
   40% {
     transform: translate(-30px, -60px) scale(0.95) rotate(144deg);
     border-radius: 50% 60% 40% 50% / 40% 50% 60% 50%;
   }
+
   60% {
     transform: translate(-60px, 30px) scale(1.15) rotate(216deg);
     border-radius: 60% 40% 50% 50% / 50% 60% 40% 60%;
   }
+
   80% {
     transform: translate(40px, 50px) scale(0.9) rotate(288deg);
     border-radius: 45% 55% 55% 45% / 55% 45% 55% 45%;
@@ -2522,9 +2570,20 @@ label[for="filter-systems"]:hover {
     opacity: 0.35;
   }
 
-  .blob-1 { width: 300px; height: 300px; }
-  .blob-2 { width: 250px; height: 250px; }
-  .blob-3 { width: 200px; height: 200px; }
+  .blob-1 {
+    width: 300px;
+    height: 300px;
+  }
+
+  .blob-2 {
+    width: 250px;
+    height: 250px;
+  }
+
+  .blob-3 {
+    width: 200px;
+    height: 200px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -2533,7 +2592,19 @@ label[for="filter-systems"]:hover {
     opacity: 0.25;
   }
 
-  .blob-1 { width: 200px; height: 200px; }
-  .blob-2 { width: 180px; height: 180px; }
-  .blob-3 { width: 150px; height: 150px; }
+  .blob-1 {
+    width: 200px;
+    height: 200px;
+  }
+
+  .blob-2 {
+    width: 180px;
+    height: 180px;
+  }
+
+  .blob-3 {
+    width: 150px;
+    height: 150px;
+  }
 }
+

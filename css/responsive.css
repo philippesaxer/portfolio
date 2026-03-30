@@ -113,19 +113,22 @@
   :root {
     --sp-4xl: 4.5rem;
     --sp-3xl: 3rem;
-    --sp-xl:  2rem;
-    --sp-lg:  1.5rem;
-    --sp-md:  1rem;
+    --sp-xl: 2rem;
+    --sp-lg: 1.5rem;
+    --sp-md: 1rem;
   }
 
   /* CRITICAL: prevent horizontal scroll on mobile */
-  html, body {
+  html,
+  body {
     overflow-x: hidden !important;
     max-width: 100vw;
   }
 
   /* Force all sections to clip overflow */
-  main, section, .section {
+  main,
+  section,
+  .section {
     overflow-x: hidden;
   }
 
@@ -138,19 +141,26 @@
     padding: 0 1.25rem;
   }
 
+  .site-logo img {
+    height: 38px !important; /* Slightly smaller than desktop but larger than original 32px */
+  }
+
   /* Header — bigger tap targets and readable text */
   .site-nav {
     gap: 1rem;
   }
 
   .nav-link {
-    font-size: 0.9rem;
+    font-size: 1.15rem;
+    /* Increased significantly for mobile tap targets */
   }
 
   .nav-cta {
     display: inline-flex;
-    padding: 0.45rem 0.9rem;
-    font-size: 0.75rem;
+    padding: 0.6rem 1.2rem;
+    /* Larger padding */
+    font-size: 1.05rem;
+    /* Larger text */
   }
 
   /* Bigger base text for readability */
@@ -173,13 +183,15 @@
   /* Hero — safe viewport height for iOS Safari */
   .hero-sticky-wrapper {
     height: 100dvh;
-    height: 100vh; /* fallback */
+    height: 100vh;
+    /* fallback */
   }
 
   /* 3D Cube — use CSS variable reduction instead of scale hack */
   .cube-container {
     transform: none;
-    animation: none; /* disable floating on mobile to reduce jank */
+    animation: none;
+    /* disable floating on mobile to reduce jank */
   }
 
   .hero-content-wrapper {
@@ -301,7 +313,7 @@
   .contact-layout {
     grid-template-columns: 1fr;
   }
-  
+
   .form-row {
     grid-template-columns: 1fr;
   }
@@ -488,7 +500,8 @@
 
   /* Footer newsletter */
   .footer-newsletter-input {
-    font-size: 16px; /* Prevents iOS zoom on focus */
+    font-size: 16px;
+    /* Prevents iOS zoom on focus */
   }
 
   /* Form inputs — prevent zoom on iOS */
