@@ -4,6 +4,52 @@
    ============================================================ */
 
 /* ============================================================
+   TOUCH DEVICE OPTIMIZATIONS
+   ============================================================ */
+
+/* Only apply hover effects on devices that support hover */
+@media (hover: hover) and (pointer: fine) {
+  .project-card:hover {
+    transform: translateY(-4px) scale(1.01);
+  }
+
+  .category-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .contact-info-card:hover {
+    transform: translateY(-4px);
+  }
+}
+
+/* Disable hover transforms on touch devices to prevent sticky states */
+@media (hover: none) {
+  .project-card:hover {
+    transform: none;
+  }
+
+  .category-card:hover {
+    transform: none;
+  }
+
+  .contact-info-card:hover {
+    transform: none;
+  }
+
+  .btn-primary:hover {
+    transform: none;
+  }
+
+  .btn-secondary:hover {
+    transform: none;
+  }
+
+  .footer-newsletter-btn:hover {
+    transform: none;
+  }
+}
+
+/* ============================================================
    TABLET  (max-width: 1024px)
    ============================================================ */
 
@@ -31,12 +77,17 @@
   }
 
   .project-layout {
-    grid-template-columns: 1fr 300px;
-    gap: 2rem;
+    grid-template-columns: 1fr;
+    padding: var(--sp-xl);
+    margin-top: -40px;
   }
 
   .hero-stats {
     gap: 2rem;
+  }
+
+  .contact-layout {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -45,10 +96,6 @@
    ============================================================ */
 
 @media (max-width: 900px) {
-  .project-layout {
-    grid-template-columns: 1fr;
-  }
-
   .sidebar-box {
     max-width: 600px;
   }
@@ -86,12 +133,70 @@
     font-size: 0.65rem;
   }
 
-  /* Hero */
-  .cube-container {
-    transform: scale(0.65); /* Fixes cube being too big and buggy on small screens */
+  /* Hero — safe viewport height for iOS Safari */
+  .hero-sticky-wrapper {
+    height: 100dvh;
+    height: 100vh; /* fallback */
   }
 
-  /* Cube rotation is now driven by scroll via JS, just like desktop */
+  /* 3D Cube — use CSS variable reduction instead of scale hack */
+  .cube-container {
+    transform: none;
+    animation: none; /* disable floating on mobile to reduce jank */
+  }
+
+  .hero-content-wrapper {
+    padding: var(--sp-md);
+  }
+
+  /* Cube face content adjustments */
+  .cube .hero-name {
+    font-size: clamp(2rem, 8vw, 3.5rem);
+  }
+
+  .cube .hero-label {
+    font-size: 0.7rem;
+    margin-bottom: var(--sp-sm);
+  }
+
+  .cube .hero-tagline {
+    font-size: 0.9rem !important;
+    line-height: 1.5;
+    margin-bottom: var(--sp-md);
+  }
+
+  /* Stats inside cube face */
+  .cube .hero-stats {
+    gap: 1rem !important;
+    padding: 0 5% !important;
+  }
+
+  .cube .stat-number {
+    font-size: 1.6rem;
+  }
+
+  .cube .stat-label {
+    font-size: 0.65rem;
+  }
+
+  /* CTA buttons inside cube */
+  .cube .hero-cta {
+    flex-direction: column;
+    gap: var(--sp-sm);
+  }
+
+  .cube .hero-cta .btn-primary,
+  .cube .hero-cta .btn-secondary {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.82rem;
+  }
+
+  .cube .face h2 {
+    font-size: 1.5rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  /* Hero stats (non-cube) */
   .hero-stats {
     gap: 1.5rem;
     flex-wrap: wrap;
@@ -108,7 +213,7 @@
 
   /* Adjust horizontal track elements */
   .h-card {
-    flex: 0 0 85vw; /* Make cards fit smaller screens gracefully */
+    flex: 0 0 85vw;
     max-width: 380px;
   }
 
@@ -186,14 +291,34 @@
     gap: 0.75rem;
   }
 
-  /* Filter bar */
+  /* Filter bar — horizontal scroll on mobile */
   .filter-bar {
     gap: 0.4rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 0.5rem;
+  }
+
+  .filter-bar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
   }
 
   /* Contact form */
   .contact-form-wrap {
     padding: 1.75rem;
+  }
+
+  /* Contact profile card on kontakt.html */
+  .contact-profile-card img {
+    max-height: 300px;
+    object-fit: cover;
   }
 }
 
@@ -232,6 +357,11 @@
     grid-template-columns: 1fr;
   }
 
+  /* Category card adjustments for single column */
+  .category-card {
+    padding: var(--sp-md) var(--sp-lg);
+  }
+
   /* Filter buttons */
   .filter-btn {
     font-size: 0.65rem;
@@ -266,5 +396,160 @@
   /* Newsletter box */
   .newsletter-box {
     padding: 2rem 1.25rem;
+  }
+
+  /* Horizontal track cards */
+  .h-card {
+    flex: 0 0 88vw;
+    max-width: none;
+  }
+
+  /* Section headers */
+  .section-label {
+    font-size: 0.85rem;
+  }
+
+  .section-desc {
+    font-size: 0.95rem;
+  }
+
+  /* Contact card */
+  .contact-card {
+    padding: var(--sp-lg);
+  }
+
+  .contact-info-card {
+    padding: var(--sp-lg);
+  }
+
+  /* Footer newsletter */
+  .footer-newsletter-input {
+    font-size: 16px; /* Prevents iOS zoom on focus */
+  }
+
+  /* Form inputs — prevent zoom on iOS */
+  .form-input,
+  .form-select,
+  .form-textarea {
+    font-size: 16px;
+  }
+}
+
+/* ============================================================
+   IPHONE 16 & SIMILAR  (max-width: 430px)
+   ============================================================ */
+
+@media (max-width: 430px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  /* Cube content fine-tuning */
+  .hero-content-wrapper {
+    padding: var(--sp-sm);
+  }
+
+  .cube .hero-name {
+    font-size: clamp(1.75rem, 7vw, 2.5rem);
+  }
+
+  .cube .hero-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+  }
+
+  .cube .hero-tagline {
+    font-size: 0.8rem !important;
+  }
+
+  .cube .hero-stats {
+    gap: 0.75rem !important;
+    padding: 0 3% !important;
+  }
+
+  .cube .stat-number {
+    font-size: 1.3rem;
+  }
+
+  .cube .stat-label {
+    font-size: 0.55rem;
+  }
+
+  .cube .hero-cta .btn-primary,
+  .cube .hero-cta .btn-secondary {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+  }
+
+  .cube .face h2 {
+    font-size: 1.25rem !important;
+  }
+
+  /* Header tweaks */
+  .nav-link {
+    font-size: 0.78rem;
+  }
+
+  .nav-cta {
+    padding: 0.35rem 0.7rem;
+    font-size: 0.6rem;
+  }
+
+  /* Contact page sidebar stacking */
+  .contact-info-sidebar {
+    gap: var(--sp-md);
+  }
+
+  /* Project meta */
+  .project-meta-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  /* Section spacing reduction */
+  .section {
+    padding: var(--sp-3xl) 0;
+  }
+
+  /* Horizontal section header */
+  .horizontal-header-wrap {
+    margin-bottom: var(--sp-md);
+  }
+
+  .section-header {
+    margin-bottom: var(--sp-xl);
+  }
+}
+
+/* ============================================================
+   VERY SMALL SCREENS  (max-width: 360px)
+   ============================================================ */
+
+@media (max-width: 360px) {
+  .cube .hero-name {
+    font-size: 1.6rem;
+  }
+
+  .cube .stat-number {
+    font-size: 1.1rem;
+  }
+
+  .cube .hero-cta .btn-primary,
+  .cube .hero-cta .btn-secondary {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.7rem;
+  }
+
+  .h-card {
+    flex: 0 0 92vw;
+  }
+
+  .nav-link {
+    font-size: 0.72rem;
+  }
+
+  .site-nav {
+    gap: 0.5rem;
   }
 }
