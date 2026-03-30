@@ -465,34 +465,6 @@
           queuedCubeUpdate();
         });
 
-        // Touch support for mobile devices (iPhone 16, etc.)
-        let touchStartX = 0;
-        let touchStartY = 0;
-        let touchRotY = 0;
-        let touchRotX = -10;
-
-        cubeContainer.addEventListener("touchstart", (e) => {
-          touchStartX = e.touches[0].clientX;
-          touchStartY = e.touches[0].clientY;
-          touchRotY = mouseRotationY;
-          touchRotX = mouseRotationX;
-        }, { passive: true });
-
-        cubeContainer.addEventListener("touchmove", (e) => {
-          const deltaX = e.touches[0].clientX - touchStartX;
-          const deltaY = e.touches[0].clientY - touchStartY;
-          
-          // Smaller multiplier for smoother touch interaction
-          mouseRotationY = touchRotY + deltaX * 0.3;
-          mouseRotationX = touchRotX - deltaY * 0.3;
-          
-          // Clamp to prevent extreme angles
-          mouseRotationX = Math.max(-45, Math.min(45, mouseRotationX));
-          mouseRotationY = Math.max(-45, Math.min(45, mouseRotationY));
-          
-          queuedCubeUpdate();
-        }, { passive: true });
-
         queuedCubeUpdate();
       }
     });
