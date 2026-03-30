@@ -1193,7 +1193,7 @@ label[for="filter-systems"]:hover {
 
 .form-label {
   font-family: var(--font-body);
-  font-size: 0.78rem;
+  font-size: 0.9rem; /* Standardized small-text size */
   font-weight: 600;
   color: var(--text-secondary);
   text-transform: uppercase;
@@ -1209,7 +1209,7 @@ label[for="filter-systems"]:hover {
   border-radius: var(--r-md);
   color: var(--text-primary);
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: 1rem; /* Standardized body size */
   outline: none;
   transition: border-color var(--transition), box-shadow var(--transition);
   width: 100%;
@@ -1982,7 +1982,7 @@ label[for="filter-systems"]:hover {
 }
 
 .contact-card-header p {
-  font-size: 1.05rem;
+  font-size: 1rem; /* Standardized body size */
   max-width: 45ch;
 }
 
@@ -2034,19 +2034,19 @@ label[for="filter-systems"]:hover {
 }
 
 .contact-info-card h3 {
-  font-size: 1.1rem;
+  font-size: 1.25rem; /* Standardized subheading size */
   margin-bottom: var(--sp-xs);
   color: var(--text-primary);
 }
 
 .contact-info-card p {
-  font-size: 0.9rem;
+  font-size: 1rem; /* Standardized body size */
   margin-bottom: var(--sp-sm);
 }
 
 .contact-info-link {
   font-family: var(--font-body);
-  font-size: 0.88rem;
+  font-size: 1rem; /* Standardized body size */
   color: var(--cyan);
   font-weight: 600;
   transition: color var(--transition);
