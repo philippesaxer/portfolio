@@ -276,8 +276,8 @@
     // Apple-Style Scroll Reveal Animation
     document.addEventListener("DOMContentLoaded", () => {
       const observerOptions = {
-        threshold: 0.15,
-        rootMargin: "0px 0px -10% 0px"
+        threshold: 0.05,
+        rootMargin: "0px 0px -5% 0px"
       };
 
       const observer = new IntersectionObserver((entries) => {
@@ -290,19 +290,10 @@
         });
       }, observerOptions);
 
-      // Select elements to animate
-      const sections = document.querySelectorAll("section:not(.hero)");
+      // Only animate individual cards, NOT the entire section
+      // (the section is too tall and the observer never triggers on mobile)
       const cards = document.querySelectorAll(".project-card, .category-card");
       
-      sections.forEach((el, index) => {
-        if (index % 2 === 0) {
-          el.classList.add("reveal-left");
-        } else {
-          el.classList.add("reveal-right");
-        }
-        observer.observe(el);
-      });
-
       cards.forEach((el, index) => {
         el.classList.add("reveal-up");
         el.style.transitionDelay = `${(index % 3) * 0.1}s`;

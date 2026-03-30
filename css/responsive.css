@@ -118,19 +118,56 @@
     --sp-md:  1rem;
   }
 
+  /* CRITICAL: prevent horizontal scroll on mobile */
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw;
+  }
+
+  /* Force all sections to clip overflow */
+  main, section, .section {
+    overflow-x: hidden;
+  }
+
+  /* HIDE BLOBS on mobile — they cause overflow + performance issues */
+  .blob-canvas {
+    display: none !important;
+  }
+
   .container {
     padding: 0 1.25rem;
   }
 
-  /* Header */
+  /* Header — bigger tap targets and readable text */
   .site-nav {
-    gap: 0.75rem;
+    gap: 1rem;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
   }
 
   .nav-cta {
     display: inline-flex;
-    padding: 0.4rem 0.8rem;
-    font-size: 0.65rem;
+    padding: 0.45rem 0.9rem;
+    font-size: 0.75rem;
+  }
+
+  /* Bigger base text for readability */
+  body {
+    font-size: 1rem;
+  }
+
+  .section-label {
+    font-size: 0.9rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.5rem, 5vw, 2.25rem);
+  }
+
+  .section-desc {
+    font-size: 1rem;
   }
 
   /* Hero — safe viewport height for iOS Safari */
@@ -176,7 +213,7 @@
   }
 
   .cube .stat-label {
-    font-size: 0.65rem;
+    font-size: 0.7rem;
   }
 
   /* CTA buttons inside cube */
@@ -192,8 +229,35 @@
   }
 
   .cube .face h2 {
-    font-size: 1.5rem !important;
+    font-size: 1.6rem !important;
     margin-bottom: 0.75rem !important;
+  }
+
+  /* Card text bigger on mobile */
+  .card-title {
+    font-size: 1.1rem;
+  }
+
+  .card-desc {
+    font-size: 0.95rem;
+  }
+
+  /* Category text bigger */
+  .category-name {
+    font-size: 1rem;
+  }
+
+  .category-count {
+    font-size: 0.8rem;
+  }
+
+  /* Footer text bigger */
+  .footer-link {
+    font-size: 0.95rem;
+  }
+
+  .footer-col h4 {
+    font-size: 0.8rem;
   }
 
   /* Hero stats (non-cube) */

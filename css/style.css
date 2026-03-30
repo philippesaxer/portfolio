@@ -2301,3 +2301,239 @@ label[for="filter-systems"]:hover {
     --cube-size: min(82vw, 70vh);
   }
 }
+
+/* ============================================================
+   MAGIC FOCUS EFFECT — :has() Selector
+   When hovering a card, all siblings blur & darken
+   ============================================================ */
+
+/* Projects Grid — Magic Focus */
+.projects-grid:has(.project-card:hover) .project-card:not(:hover) {
+  filter: blur(3px) brightness(0.5);
+  transform: scale(0.97);
+  opacity: 0.6;
+}
+
+.projects-grid .project-card {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.projects-grid:has(.project-card:hover) .project-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 20px 60px rgba(0, 113, 227, 0.15), 0 8px 24px rgba(0, 0, 0, 0.4);
+  border-color: var(--cyan);
+  z-index: 10;
+}
+
+/* Categories Grid — Magic Focus */
+.categories-grid:has(.category-card:hover) .category-card:not(:hover) {
+  filter: blur(2px) brightness(0.5);
+  transform: scale(0.96);
+  opacity: 0.5;
+}
+
+.categories-grid .category-card {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.categories-grid:has(.category-card:hover) .category-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 16px 48px rgba(0, 113, 227, 0.12), 0 6px 20px rgba(0, 0, 0, 0.35);
+  border-color: var(--cyan);
+  z-index: 10;
+}
+
+/* Horizontal Project Cards — Magic Focus */
+.horizontal-track:has(.h-card:hover) .h-card:not(:hover) {
+  filter: blur(3px) brightness(0.45);
+  transform: scale(0.95);
+  opacity: 0.5;
+}
+
+.horizontal-track .h-card {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.horizontal-track:has(.h-card:hover) .h-card:hover {
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 0 24px 64px rgba(0, 113, 227, 0.2), 0 8px 32px rgba(0, 0, 0, 0.5);
+  border-color: var(--cyan);
+  z-index: 10;
+}
+
+/* Contact Info Cards — Magic Focus */
+.contact-info-sidebar:has(.contact-info-card:hover) .contact-info-card:not(:hover) {
+  filter: blur(2px) brightness(0.5);
+  opacity: 0.5;
+}
+
+/* Disable magic focus on touch devices */
+@media (hover: none) {
+  .projects-grid:has(.project-card:hover) .project-card:not(:hover),
+  .categories-grid:has(.category-card:hover) .category-card:not(:hover),
+  .horizontal-track:has(.h-card:hover) .h-card:not(:hover),
+  .contact-info-sidebar:has(.contact-info-card:hover) .contact-info-card:not(:hover) {
+    filter: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+/* ============================================================
+   ORGANIC GLASSMORPHISM — Animated Blob Background
+   Living, morphing color blobs behind frosted glass
+   ============================================================ */
+
+.blob-canvas {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.55;
+  will-change: transform;
+  mix-blend-mode: screen;
+}
+
+.blob-1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0, 113, 227, 0.7) 0%, rgba(0, 71, 171, 0.3) 50%, transparent 70%);
+  top: -10%;
+  left: -5%;
+  animation: blob-drift-1 18s ease-in-out infinite;
+}
+
+.blob-2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(100, 210, 255, 0.6) 0%, rgba(0, 180, 216, 0.2) 50%, transparent 70%);
+  top: 30%;
+  right: -10%;
+  animation: blob-drift-2 22s ease-in-out infinite;
+}
+
+.blob-3 {
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(191, 90, 242, 0.5) 0%, rgba(120, 50, 180, 0.2) 50%, transparent 70%);
+  bottom: -5%;
+  left: 30%;
+  animation: blob-drift-3 25s ease-in-out infinite;
+}
+
+@keyframes blob-drift-1 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  }
+  25% {
+    transform: translate(80px, 50px) scale(1.15) rotate(45deg);
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+    transform: translate(30px, 100px) scale(0.9) rotate(120deg);
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+  75% {
+    transform: translate(-40px, 60px) scale(1.1) rotate(200deg);
+    border-radius: 50% 40% 50% 60% / 35% 55% 45% 65%;
+  }
+}
+
+@keyframes blob-drift-2 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    border-radius: 50% 30% 60% 40% / 60% 40% 50% 50%;
+  }
+  33% {
+    transform: translate(-70px, 60px) scale(1.2) rotate(-60deg);
+    border-radius: 40% 60% 40% 60% / 50% 50% 60% 40%;
+  }
+  66% {
+    transform: translate(50px, -40px) scale(0.85) rotate(-150deg);
+    border-radius: 60% 40% 50% 50% / 40% 60% 40% 60%;
+  }
+}
+
+@keyframes blob-drift-3 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    border-radius: 60% 40% 50% 50% / 50% 60% 40% 50%;
+  }
+  20% {
+    transform: translate(60px, -30px) scale(1.1) rotate(72deg);
+    border-radius: 40% 50% 60% 50% / 60% 40% 50% 60%;
+  }
+  40% {
+    transform: translate(-30px, -60px) scale(0.95) rotate(144deg);
+    border-radius: 50% 60% 40% 50% / 40% 50% 60% 50%;
+  }
+  60% {
+    transform: translate(-60px, 30px) scale(1.15) rotate(216deg);
+    border-radius: 60% 40% 50% 50% / 50% 60% 40% 60%;
+  }
+  80% {
+    transform: translate(40px, 50px) scale(0.9) rotate(288deg);
+    border-radius: 45% 55% 55% 45% / 55% 45% 55% 45%;
+  }
+}
+
+/* Frosted glass overlay for sections with blobs */
+.glass-overlay {
+  position: relative;
+  z-index: 1;
+}
+
+.glass-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+  z-index: -1;
+  border-radius: inherit;
+}
+
+/* Noise texture overlay for premium frosted glass feel */
+.glass-noise::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+}
+
+/* Reduce blob intensity on mobile for performance */
+@media (max-width: 768px) {
+  .blob {
+    filter: blur(80px);
+    opacity: 0.35;
+  }
+
+  .blob-1 { width: 300px; height: 300px; }
+  .blob-2 { width: 250px; height: 250px; }
+  .blob-3 { width: 200px; height: 200px; }
+}
+
+@media (max-width: 480px) {
+  .blob {
+    filter: blur(60px);
+    opacity: 0.25;
+  }
+
+  .blob-1 { width: 200px; height: 200px; }
+  .blob-2 { width: 180px; height: 180px; }
+  .blob-3 { width: 150px; height: 150px; }
+}
