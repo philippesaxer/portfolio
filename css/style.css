@@ -116,6 +116,22 @@ body {
   overflow-x: hidden;
   min-height: 100vh;
   position: relative;
+  /* Custom Bluish Cursor - Default Arrow */
+  cursor: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.5 3.5V20.5L10.5 15.5H18.5L5.5 3.5Z' fill='%230071E3' stroke='white' stroke-width='1.5' stroke-linejoin='round'/%3E%3C/svg%3E"), auto;
+}
+
+/* Custom Bluish Cursor - Pointer for interactive elements */
+@media (hover: hover) and (pointer: fine) {
+  a, 
+  button, 
+  .btn-primary, 
+  .btn-secondary, 
+  .nav-link, 
+  .nav-cta, 
+  .project-card, 
+  .category-card {
+    cursor: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 11V3C11 1.89543 11.8954 1 13 1C14.1046 1 15 1.89543 15 3V12M15 12V10C15 8.89543 15.8954 8 17 8C18.1046 8 19 8.89543 19 10V12M19 12V10C19 8.89543 19.8954 8 21 8C22.1046 8 23 8.89543 23 10V12M23 12V11C23 9.89543 23.8954 9 25 9C26.1046 9 27 9.89543 27 11V18C27 21.866 23.866 25 20 25H15C11.134 25 8 21.866 8 18V12C8 12 8 11.5 10 11.5C12 11.5 12 12 12 13' stroke='%230071E3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"), pointer !important;
+  }
 }
 
 /* ============================================================
@@ -337,15 +353,23 @@ p {
 
   /* Animierter, breiter linear-gradient Hintergrund (Dunkle Premium Blau Töne) */
   background: linear-gradient(-45deg,
-      #000511, /* Extrem dunkles Nachtblau */
-      #010a1b, /* Tiefes Marineblau */
-      #001233, /* Dark Navy */
-      #002244, /* Deep Space Blue */
-      #003366, /* Edles Midnight Blue */
-      #002244, /* Weicher Übergang zurück */
-      #010a1b, /* Wieder tiefes Blau */
-      #000511  /* Zurück zum Ursprung für den nahtlosen Loop */
-  );
+      #000511,
+      /* Extrem dunkles Nachtblau */
+      #010a1b,
+      /* Tiefes Marineblau */
+      #001233,
+      /* Dark Navy */
+      #002244,
+      /* Deep Space Blue */
+      #003366,
+      /* Edles Midnight Blue */
+      #002244,
+      /* Weicher Übergang zurück */
+      #010a1b,
+      /* Wieder tiefes Blau */
+      #000511
+      /* Zurück zum Ursprung für den nahtlosen Loop */
+    );
   background-size: 400% 400%;
   animation: nav-gradient-flow 15s ease infinite;
 
@@ -355,9 +379,17 @@ p {
 
 /* Keyframes für den fliessenden Gradient */
 @keyframes nav-gradient-flow {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .site-header.header-scrolled {
@@ -375,7 +407,8 @@ p {
 
 .site-logo {
   font-family: var(--font-display);
-  font-size: 1.35rem; /* Increased from 1.15rem */
+  font-size: 1.35rem;
+  /* Increased from 1.15rem */
   font-weight: 800;
   color: var(--text-primary);
   display: flex;
@@ -1193,7 +1226,8 @@ label[for="filter-systems"]:hover {
 
 .form-label {
   font-family: var(--font-body);
-  font-size: 0.9rem; /* Standardized small-text size */
+  font-size: 0.9rem;
+  /* Standardized small-text size */
   font-weight: 600;
   color: var(--text-secondary);
   text-transform: uppercase;
@@ -1209,7 +1243,8 @@ label[for="filter-systems"]:hover {
   border-radius: var(--r-md);
   color: var(--text-primary);
   font-family: var(--font-body);
-  font-size: 1rem; /* Standardized body size */
+  font-size: 1rem;
+  /* Standardized body size */
   outline: none;
   transition: border-color var(--transition), box-shadow var(--transition);
   width: 100%;
@@ -1982,7 +2017,8 @@ label[for="filter-systems"]:hover {
 }
 
 .contact-card-header p {
-  font-size: 1rem; /* Standardized body size */
+  font-size: 1rem;
+  /* Standardized body size */
   max-width: 45ch;
 }
 
@@ -2034,19 +2070,22 @@ label[for="filter-systems"]:hover {
 }
 
 .contact-info-card h3 {
-  font-size: 1.25rem; /* Standardized subheading size */
+  font-size: 1.25rem;
+  /* Standardized subheading size */
   margin-bottom: var(--sp-xs);
   color: var(--text-primary);
 }
 
 .contact-info-card p {
-  font-size: 1rem; /* Standardized body size */
+  font-size: 1rem;
+  /* Standardized body size */
   margin-bottom: var(--sp-sm);
 }
 
 .contact-info-link {
   font-family: var(--font-body);
-  font-size: 1rem; /* Standardized body size */
+  font-size: 1rem;
+  /* Standardized body size */
   color: var(--cyan);
   font-weight: 600;
   transition: color var(--transition);
@@ -2607,4 +2646,3 @@ label[for="filter-systems"]:hover {
     height: 150px;
   }
 }
-
