@@ -45,6 +45,12 @@
       <nav class="site-nav">
         <a href="index.html"    class="nav-link">Home</a>
         <a href="projekte.html" class="nav-link">Projekte</a>
+        <a href="projekte.html?filter=merkliste" class="nav-wishlist" id="navWishlist" title="Merkliste">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="heart-outline" d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+          <span class="wishlist-count" id="wishlistCount">0</span>
+        </a>
         <a href="kontakt.html"  class="nav-cta active">Kontakt</a>
       </nav>
     </div>
@@ -155,6 +161,30 @@
       </div>
     </section>
 
+    <!-- TERMINBUCHUNG MIT CAL.COM -->
+    <section class="booking-section">
+      <div class="container">
+        <div class="booking-card">
+          <div class="booking-card-header">
+            <span class="section-label">Terminbuchung</span>
+            <h2>Termin vereinbaren</h2>
+            <p>Buche direkt einen Termin für ein persönliches Gespräch — unkompliziert und schnell.</p>
+          </div>
+          <div class="booking-embed-container" id="bookingEmbed">
+            <!-- Cal.com Inline Embed -->
+            <div class="booking-fallback" id="bookingFallback">
+              <div class="booking-icon">📅</div>
+              <h3 style="color: var(--text-primary); font-size: 1.25rem;">Termin buchen</h3>
+              <p>Wähle einen passenden Zeitpunkt für unser Gespräch. Du wirst zu Cal.com weitergeleitet.</p>
+              <a href="https://cal.com" target="_blank" rel="noopener noreferrer" class="btn-primary" id="bookingLink">
+                Termin buchen →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- ====================================================
@@ -239,6 +269,39 @@
       }
     });
   </script>
+  <script src="js/wishlist.js"></script>
   <script src="js/main.js"></script>
+
+  <!-- Cal.com Embed Script -->
+  <script>
+    // Initialize Cal.com inline embed
+    (function() {
+      const embedContainer = document.getElementById('bookingEmbed');
+      const fallback = document.getElementById('bookingFallback');
+      
+      // Try loading the Cal.com embed widget
+      // Replace 'your-username' with your actual Cal.com username
+      // For now, we show the fallback with a direct booking link
+      
+      // Cal.com inline embed via iframe
+      // To activate: Replace the URL below with your Cal.com scheduling link
+      const calUrl = 'https://cal.com/philippe-saxer/15min'; // e.g., 'https://cal.com/philippe-saxer/15min'
+      
+      if (calUrl && embedContainer) {
+        const iframe = document.createElement('iframe');
+        iframe.src = calUrl + '?embed=true&theme=dark';
+        iframe.style.width = '100%';
+        iframe.style.minHeight = '500px';
+        iframe.style.border = 'none';
+        iframe.style.borderRadius = 'var(--r-lg)';
+        iframe.setAttribute('loading', 'lazy');
+        iframe.setAttribute('title', 'Terminbuchung');
+        
+        // Replace fallback with iframe
+        if (fallback) fallback.style.display = 'none';
+        embedContainer.appendChild(iframe);
+      }
+    })();
+  </script>
 </body>
 </html>

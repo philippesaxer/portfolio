@@ -2638,6 +2638,321 @@ label[for="filter-systems"]:hover {
   background-size: 200px 200px;
 }
 
+/* ============================================================
+   WISHLIST / MERKLISTE — Heart Button on Cards
+   ============================================================ */
+
+.wishlist-btn {
+  position: absolute;
+  top: var(--sp-md);
+  right: var(--sp-md);
+  z-index: 10;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition);
+  padding: 0;
+  outline: none;
+}
+
+.wishlist-btn:hover {
+  background: rgba(0, 0, 0, 0.85);
+  transform: scale(1.15);
+}
+
+.wishlist-btn svg {
+  width: 18px;
+  height: 18px;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.wishlist-btn .heart-outline {
+  stroke: var(--text-secondary);
+  fill: none;
+  stroke-width: 2;
+  transition: all 0.3s ease;
+}
+
+.wishlist-btn.active .heart-outline {
+  stroke: #FF6482;
+  fill: #FF6482;
+}
+
+.wishlist-btn.active {
+  animation: heart-pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes heart-pop {
+  0% { transform: scale(1); }
+  30% { transform: scale(1.35); }
+  60% { transform: scale(0.9); }
+  100% { transform: scale(1); }
+}
+
+/* Wishlist badge in navigation */
+.nav-wishlist {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: color var(--transition);
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-wishlist::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--cyan);
+  transition: width var(--transition);
+}
+
+.nav-wishlist:hover,
+.nav-wishlist.active {
+  color: var(--cyan);
+}
+
+.nav-wishlist:hover::after,
+.nav-wishlist.active::after {
+  width: 100%;
+}
+
+.nav-wishlist svg {
+  width: 18px;
+  height: 18px;
+}
+
+.nav-wishlist .heart-outline {
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+}
+
+.wishlist-count {
+  position: absolute;
+  top: -8px;
+  right: -12px;
+  min-width: 18px;
+  height: 18px;
+  background: var(--cyan);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 0.65rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.wishlist-count.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Merkliste section on projekte.html */
+.merkliste-section {
+  padding: var(--sp-3xl) 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.merkliste-section .section-header {
+  margin-bottom: var(--sp-xl);
+}
+
+.merkliste-empty {
+  text-align: center;
+  padding: var(--sp-3xl);
+  background: var(--bg-card);
+  border: 1px dashed var(--border-default);
+  border-radius: var(--r-xl);
+}
+
+.merkliste-empty p {
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+.merkliste-empty .empty-icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--sp-md);
+  opacity: 0.4;
+}
+
+.merkliste-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-lg);
+}
+
+.merkliste-clear-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-xs);
+  padding: 0.5rem 1.25rem;
+  background: transparent;
+  border: 1px solid rgba(255, 100, 130, 0.3);
+  border-radius: var(--r-pill);
+  color: #FF6482;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.merkliste-clear-btn:hover {
+  background: rgba(255, 100, 130, 0.1);
+  border-color: #FF6482;
+}
+
+/* Toast notification for wishlist */
+.wishlist-toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--r-pill);
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  z-index: 9000;
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-glow);
+  pointer-events: none;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.wishlist-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ============================================================
+   CAL.COM BOOKING EMBED — Contact Page
+   ============================================================ */
+
+.booking-section {
+  padding: var(--sp-3xl) 0;
+}
+
+.booking-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--r-xl);
+  padding: var(--sp-3xl);
+  overflow: hidden;
+}
+
+.booking-card-header {
+  margin-bottom: var(--sp-xl);
+}
+
+.booking-card-header h2 {
+  margin-bottom: var(--sp-sm);
+}
+
+.booking-card-header p {
+  font-size: 1rem;
+  max-width: 55ch;
+}
+
+.booking-embed-container {
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+  min-height: 500px;
+  position: relative;
+}
+
+.booking-embed-container iframe {
+  width: 100%;
+  min-height: 500px;
+  border: none;
+  border-radius: var(--r-lg);
+}
+
+.booking-fallback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-md);
+  padding: var(--sp-3xl);
+  text-align: center;
+}
+
+.booking-fallback .booking-icon {
+  width: 64px;
+  height: 64px;
+  background: var(--cyan-subtle);
+  border-radius: var(--r-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  color: var(--cyan);
+}
+
+.booking-fallback p {
+  max-width: 45ch;
+}
+
+.booking-fallback .btn-primary {
+  margin-top: var(--sp-sm);
+}
+
+@media (max-width: 1024px) {
+  .merkliste-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .merkliste-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-card {
+    padding: var(--sp-xl);
+  }
+
+  .booking-embed-container {
+    min-height: 400px;
+  }
+
+  .booking-embed-container iframe {
+    min-height: 400px;
+  }
+}
+
 /* Reduce blob intensity on mobile for performance */
 @media (max-width: 768px) {
   .blob {

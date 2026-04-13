@@ -45,6 +45,12 @@
       <nav class="site-nav">
         <a href="index.html"    class="nav-link">Home</a>
         <a href="projekte.html" class="nav-link active">Projekte</a>
+        <a href="projekte.html?filter=merkliste" class="nav-wishlist" id="navWishlist" title="Merkliste">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="heart-outline" d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+          <span class="wishlist-count" id="wishlistCount">0</span>
+        </a>
         <a href="kontakt.html"  class="nav-cta">Kontakt</a>
       </nav>
     </div>
@@ -60,6 +66,24 @@
       All radio inputs MUST be direct siblings of
       .filter-bar-wrap and .grid-wrap so the ~ selector works.
     -->
+    <!-- MERKLISTE SECTION -->
+    <section class="merkliste-section" id="merklisteSection" style="display: none;">
+      <div class="container">
+        <div class="section-header" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--sp-md);">
+          <div>
+            <span class="section-label">Deine Favoriten</span>
+            <h2 class="section-title">Merkliste</h2>
+          </div>
+          <button class="merkliste-clear-btn" id="clearMerkliste" title="Merkliste leeren">
+            ✕ Alle entfernen
+          </button>
+        </div>
+        <div class="merkliste-grid" id="merklisteGrid">
+          <!-- Dynamically populated by JS -->
+        </div>
+      </div>
+    </section>
+
     <section>
 
       <!-- 1 · Page header (outside filter scope) -->
@@ -102,11 +126,16 @@
         <div class="projects-grid">
 
           <!-- 01 · Migros Prop Hunt — Games -->
-          <article class="project-card cat-games">
+          <article class="project-card cat-games" data-project-id="migrosprophunt" data-project-title="Migros Prop Hunt" data-project-img="images/migrosprophunt.png" data-project-cat="Games" data-project-href="projekt-migrosprophunt.html">
             <a href="projekt-migrosprophunt.html" class="card-link-layer" aria-label="Migros Prop Hunt ansehen"></a>
             <div class="card-thumb">
               <img src="images/migrosprophunt.png" alt="Migros Prop Hunt" class="card-thumb-img">
               <span class="card-badge">Games</span>
+              <button class="wishlist-btn" data-project="migrosprophunt" aria-label="Zur Merkliste hinzufügen">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path class="heart-outline" d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+              </button>
             </div>
             <div class="card-body">
               <h3 class="card-title">Migros Prop Hunt</h3>
@@ -116,11 +145,16 @@
           </article>
 
           <!-- 02 · Node.js API Development — Backend -->
-          <article class="project-card cat-backend">
+          <article class="project-card cat-backend" data-project-id="nodejs" data-project-title="Node.js" data-project-img="images/nodejs.png" data-project-cat="Backend" data-project-href="projekt-nodejs.html">
             <a href="projekt-nodejs.html" class="card-link-layer" aria-label="Node.js Projekt ansehen"></a>
             <div class="card-thumb">
               <img src="images/nodejs.png" alt="Node.js" class="card-thumb-img">
               <span class="card-badge">Backend</span>
+              <button class="wishlist-btn" data-project="nodejs" aria-label="Zur Merkliste hinzufügen">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path class="heart-outline" d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+              </button>
             </div>
             <div class="card-body">
               <h3 class="card-title">Node.js</h3>
@@ -130,11 +164,16 @@
           </article>
 
           <!-- 03 · Internet of Everything — IoT -->
-          <article class="project-card cat-iot">
+          <article class="project-card cat-iot" data-project-id="iot" data-project-title="Internet of Everything" data-project-img="images/iotioe.png" data-project-cat="IoT" data-project-href="projekt-iot.html">
             <a href="projekt-iot.html" class="card-link-layer" aria-label="Internet of Everything ansehen"></a>
             <div class="card-thumb">
               <img src="images/iotioe.png" alt="Internet of Everything" class="card-thumb-img">
               <span class="card-badge">IoT</span>
+              <button class="wishlist-btn" data-project="iot" aria-label="Zur Merkliste hinzufügen">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path class="heart-outline" d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+              </button>
             </div>
             <div class="card-body">
               <h3 class="card-title">Internet of Everything</h3>
@@ -144,11 +183,16 @@
           </article>
 
           <!-- 04 · JavaScript Frontend — Frontend -->
-          <article class="project-card cat-frontend">
+          <article class="project-card cat-frontend" data-project-id="frontend" data-project-title="JavaScript Frontend" data-project-img="images/programmiergrundlagen2.png" data-project-cat="Frontend" data-project-href="projekt-frontend.html">
             <a href="projekt-frontend.html" class="card-link-layer" aria-label="JavaScript Frontend ansehen"></a>
             <div class="card-thumb">
               <img src="images/programmiergrundlagen2.png" alt="JavaScript Frontend" class="card-thumb-img">
               <span class="card-badge">Frontend</span>
+              <button class="wishlist-btn" data-project="frontend" aria-label="Zur Merkliste hinzufügen">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path class="heart-outline" d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+              </button>
             </div>
             <div class="card-body">
               <h3 class="card-title">JavaScript Frontend</h3>
@@ -158,11 +202,16 @@
           </article>
 
           <!-- 05 · Python Crashcourse — Programming -->
-          <article class="project-card cat-programming">
+          <article class="project-card cat-programming" data-project-id="python" data-project-title="Python Crashcourse" data-project-img="images/python.png" data-project-cat="Programming" data-project-href="projekt-python.html">
             <a href="projekt-python.html" class="card-link-layer" aria-label="Python Projekt ansehen"></a>
             <div class="card-thumb">
               <img src="images/python.png" alt="Python Crashcourse" class="card-thumb-img">
               <span class="card-badge">Programming</span>
+              <button class="wishlist-btn" data-project="python" aria-label="Zur Merkliste hinzufügen">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path class="heart-outline" d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+              </button>
             </div>
             <div class="card-body">
               <h3 class="card-title">Python Crashcourse</h3>
@@ -172,11 +221,16 @@
           </article>
 
           <!-- 06 · Datenbanken und UML — Database -->
-          <article class="project-card cat-database">
+          <article class="project-card cat-database" data-project-id="database" data-project-title="Datenbanken & UML" data-project-img="images/uml.png" data-project-cat="Database" data-project-href="projekt-database.html">
             <a href="projekt-database.html" class="card-link-layer" aria-label="Datenbanken Projekt ansehen"></a>
             <div class="card-thumb">
               <img src="images/uml.png" alt="Datenbanken und UML" class="card-thumb-img">
               <span class="card-badge">Database</span>
+              <button class="wishlist-btn" data-project="database" aria-label="Zur Merkliste hinzufügen">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path class="heart-outline" d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+              </button>
             </div>
             <div class="card-body">
               <h3 class="card-title">Grundlagen und Entwurf von Datenbanken und UML</h3>
@@ -186,11 +240,16 @@
           </article>
 
           <!-- 07 · Microsoft Office & Präsentationen — Tools -->
-          <article class="project-card cat-tools">
+          <article class="project-card cat-tools" data-project-id="office" data-project-title="Microsoft Office" data-project-img="images/powerpoint.png" data-project-cat="Tools" data-project-href="projekt-office.html">
             <a href="projekt-office.html" class="card-link-layer" aria-label="Office Projekt ansehen"></a>
             <div class="card-thumb">
               <img src="images/powerpoint.png" alt="Microsoft Office" class="card-thumb-img">
               <span class="card-badge">Tools</span>
+              <button class="wishlist-btn" data-project="office" aria-label="Zur Merkliste hinzufügen">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path class="heart-outline" d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+              </button>
             </div>
             <div class="card-body">
               <h3 class="card-title">Microsoft Office | Power Point</h3>
@@ -200,11 +259,16 @@
           </article>
 
           <!-- 08 · Programmiergrundlagen I — Programming -->
-          <article class="project-card cat-programming">
+          <article class="project-card cat-programming" data-project-id="programming1" data-project-title="Programmiergrundlagen I" data-project-img="images/programmiergrundlagen.png" data-project-cat="Programming" data-project-href="projekt-programming1.html">
             <a href="projekt-programming1.html" class="card-link-layer" aria-label="Programmiergrundlagen ansehen"></a>
             <div class="card-thumb">
               <img src="images/programmiergrundlagen.png" alt="Programmiergrundlagen I" class="card-thumb-img">
               <span class="card-badge">Programming</span>
+              <button class="wishlist-btn" data-project="programming1" aria-label="Zur Merkliste hinzufügen">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path class="heart-outline" d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+              </button>
             </div>
             <div class="card-body">
               <h3 class="card-title">Programmiergrundlagen I</h3>
@@ -214,11 +278,16 @@
           </article>
 
           <!-- 09 · System Development Fundamentals — Systems -->
-          <article class="project-card cat-programming">
+          <article class="project-card cat-programming" data-project-id="dev-fundamentals" data-project-title="Development Fundamentals" data-project-img="images/systemdevolopment.png" data-project-cat="Programming" data-project-href="projekt-dev-fundamentals.html">
             <a href="projekt-dev-fundamentals.html" class="card-link-layer" aria-label="System Development ansehen"></a>
             <div class="card-thumb">
               <img src="images/systemdevolopment.png" alt="Development Fundamentals" class="card-thumb-img">
               <span class="card-badge">Programming</span>
+              <button class="wishlist-btn" data-project="dev-fundamentals" aria-label="Zur Merkliste hinzufügen">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path class="heart-outline" d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+              </button>
             </div>
             <div class="card-body">
               <h3 class="card-title">Development Fundamentals</h3>
@@ -228,11 +297,16 @@
           </article>
 
           <!-- 10 · Windows Internals — Systems -->
-          <article class="project-card cat-systems">
+          <article class="project-card cat-systems" data-project-id="windows" data-project-title="Windows Internals" data-project-img="images/windowsregistery.png" data-project-cat="Systems" data-project-href="projekt-windows.html">
             <a href="projekt-windows.html" class="card-link-layer" aria-label="Windows Internals ansehen"></a>
             <div class="card-thumb">
               <img src="images/windowsregistery.png" alt="Windows Internals" class="card-thumb-img">
               <span class="card-badge">Systems</span>
+              <button class="wishlist-btn" data-project="windows" aria-label="Zur Merkliste hinzufügen">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path class="heart-outline" d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+              </button>
             </div>
             <div class="card-body">
               <h3 class="card-title">Windows Internals/Registry</h3>
@@ -360,6 +434,7 @@
       });
     });
   </script>
+  <script src="js/wishlist.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
