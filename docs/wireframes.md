@@ -1,6 +1,6 @@
 # Wireframes
 
-Dieses Dokument zeigt die Wireframes der wichtigsten Seiten als Bilder für Desktop, Tablet und Mobile. Die Bilder sind kommentiert, damit die Struktur auf einen Blick erkennbar ist.
+Dieses Dokument zeigt die Wireframes der wichtigsten Seiten als Bilder für Desktop, Tablet und Mobile. Dazu steht noch Text wie was angepasst wurde auf der Webseite.
 
 ---
 
@@ -11,7 +11,7 @@ Dieses Dokument zeigt die Wireframes der wichtigsten Seiten als Bilder für Desk
 ![Startseite Desktop](../images/startseite.png)
 
 - Header mit Logo, Navigation und evtl. Herz-Icon
-- Große Hero-Sektion mit 3D-Illustration und Portfolio-Titel
+- Grosse Hero-Sektion mit 3D-Illustration und Portfolio-Titel
 - Projektvorschau in Kartenform
 - Kategorienbereich / Filter
 - Footer mit Logo, Navigation, Kontakt und Newsletter
@@ -29,8 +29,7 @@ Dieses Dokument zeigt die Wireframes der wichtigsten Seiten als Bilder für Desk
 ![Startseite Mobile](../images/startseite-handy.png)
 
 - Single-Column-Layout für bessere Lesbarkeit
-- Hamburger-Menü / vereinfachte Navigation
-- Großes Hero-Element, darunter Projektkarten einzeln
+- Grosses Hero-Element, darunter Projektkarten einzeln
 - Kategorien gestaffelt untereinander
 
 ---
@@ -69,7 +68,7 @@ Dieses Dokument zeigt die Wireframes der wichtigsten Seiten als Bilder für Desk
 
 ![Projekt-Detail Desktop](../images/projektdetail.png)
 
-- Detailansicht mit großem Vorschaubild
+- Detailansicht mit grossem Vorschaubild
 - Projektinformationen und Beschreibung nebeneinander
 - Technische Details und Links sichtbar im sichtbaren Bereich
 
@@ -86,7 +85,7 @@ Dieses Dokument zeigt die Wireframes der wichtigsten Seiten als Bilder für Desk
 ![Projekt-Detail Mobile](../images/projektdetail-handy.png)
 
 - Vertikale Reihenfolge: Bild, Titel, Beschreibung, Details
-- Große Schaltflächen und klarer Textfluss
+- Grosse Schaltflaechen und klarer Textfluss
 - Weniger visuelle Elemente, Fokus auf Inhalte
 
 ---
@@ -115,4 +114,4 @@ Dieses Dokument zeigt die Wireframes der wichtigsten Seiten als Bilder für Desk
 
 - Einspaltiges Kontaktformular
 - Klar getrennte Bereiche für Text, Formular und Terminbuchung
-- Einfaches Scrolling und große Buttons
+- Einfaches Scrolling und grosse Buttons
