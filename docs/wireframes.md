@@ -1,146 +1,118 @@
 # Wireframes
 
-Dieses Dokument beschreibt den schematischen Aufbau (Wireframes) der drei Hauptansichten der Portfolio-Website: Desktop, Tablet und Mobile. 
-Die Seite folgt einem "Mobile First" bzw. responsiven Ansatz, wobei sich die Layout-Struktur an die jeweilige Bildschirmbreite anpasst.
+Dieses Dokument zeigt die Wireframes der wichtigsten Seiten als Bilder für Desktop, Tablet und Mobile. Die Bilder sind kommentiert, damit die Struktur auf einen Blick erkennbar ist.
 
 ---
 
-## 1. Desktop (ab > 1024px)
+## Startseite
 
-Auf grossen Bildschirmen wird der Platz optimal genutzt. Elemente werden oft in Rastern (Grids) nebeneinander dargestellt.
+### Desktop
 
-### Startseite (Home)
-```text
-+---------------------------------------------------------+
-| [Logo PS]               Home  Projekte  [♡]  [Kontakt]  |  <-- Sticky Header
-+---------------------------------------------------------+
-|                                                         |
-|                     [ 3D Cube ]                         |
-|                    Hero Section                         |  <-- Full Height
-|               Portfolio Philippe Saxer                  |
-|                                                         |
-+---------------------------------------------------------+
-| Alle Arbeiten                                           |
-| Projekte                              [Horizontaler]    |
-|                                       [   Scroll   ]    |
-| [Card 1]  [Card 2]  [Card 3]  ...                       |
-+---------------------------------------------------------+
-| Themenbereiche                                          |
-| Kategorien                                              |
-|                                                         |
-| [Games] [Backend] [IoT] [Frontend]                      |  <-- 4 Spalten
-| [Prog ] [Database][Tools][Systems ]                     |
-+---------------------------------------------------------+
-| [Logo]   Navigation   Kontakt    Newsletter             |  <-- Footer (4 Spalten)
-+---------------------------------------------------------+
-```
+![Startseite Desktop](../images/startseite.png)
 
-### Kontaktseite (Kontakt)
-```text
-+---------------------------------------------------------+
-| [Logo PS]               Home  Projekte  [♡]  [Kontakt]  |
-+---------------------------------------------------------+
-| Kontakt                                                 |
-| Schreib mir                                             |
-+---------------------------------------------------------+
-|                                   |                     |
-|  [ Name ]      [ E-Mail ]         |  [ Mail Icon ]      |
-|                                   |  E-Mail Adresse     |
-|  [ Betreff Dropdown ]             |                     |
-|                                   |  [ Team Photo ]     |
-|  [ Nachricht Textarea ]           |  Ausbildung (BMZ..) |
-|                                   |                     |
-|  [ Nachricht senden ]             |                     |
-|                                   |                     |
-+---------------------------------------------------------+
-| Terminbuchung                                           |
-| [ Cal.com Iframe / Fallback Button ]                    |
-+---------------------------------------------------------+
-```
+- Header mit Logo, Navigation und evtl. Herz-Icon
+- Große Hero-Sektion mit 3D-Illustration und Portfolio-Titel
+- Projektvorschau in Kartenform
+- Kategorienbereich / Filter
+- Footer mit Logo, Navigation, Kontakt und Newsletter
+
+### Tablet
+
+![Startseite Tablet](../images/startseite-tablet.png)
+
+- Kompaktes Layout mit weniger Spalten
+- Projektkarten und Kategorien in zwei Spalten oder gestapelten Reihen
+- Header bleibt sichtbar, Navigation ist leicht reduziert
+
+### Mobile
+
+![Startseite Mobile](../images/startseite-handy.png)
+
+- Single-Column-Layout für bessere Lesbarkeit
+- Hamburger-Menü / vereinfachte Navigation
+- Großes Hero-Element, darunter Projektkarten einzeln
+- Kategorien gestaffelt untereinander
 
 ---
 
-## 2. Tablet (768px - 1024px)
+## Projekte / Portfolio
 
-Hier wird das Layout leicht komprimiert. Raster mit 3 oder 4 Spalten ändern sich häufig zu 2 Spalten.
+### Desktop
 
-### Startseite (Home)
-```text
-+---------------------------------------------------------+
-| [Logo PS]             Home Projekte [♡] [Kontakt]       |
-+---------------------------------------------------------+
-|                                                         |
-|                     [ 3D Cube ]                         |
-|                                                         |
-|               Portfolio Philippe Saxer                  |
-|                                                         |
-+---------------------------------------------------------+
-| Projekte                              [Horizontaler]    |
-| [Card 1]  [Card 2]  [Card 3]  ...                       |
-+---------------------------------------------------------+
-| Kategorien                                              |
-| [Games]    [Backend]                                    |  <-- 2 Spalten
-| [IoT  ]    [Frontend]                                   |
-| ...        ...                                          |
-+---------------------------------------------------------+
-| [Logo]       |  Navigation                              |  <-- Footer (2 Spalten)
-| Kontakt      |  Newsletter                              |
-+---------------------------------------------------------+
-```
+![Projekte Desktop](../images/projekte.png)
+
+- Übersichtliche Kartenansicht der Projekte
+- Filter / Kategorien oben im Bereich
+- Breite Inhaltsfläche mit mehreren Karten nebeneinander
+
+### Tablet
+
+![Projekte Tablet](../images/projekte-tablet.png)
+
+- Zwei Spalten statt drei oder vier
+- Karten weiterhin gut lesbar, aber platzsparender angeordnet
+- Navigation und Filter oberhalb der Projektliste
+
+### Mobile
+
+![Projekte Mobile](../images/projekte-handy.png)
+
+- Einspaltige Projektliste
+- Karten nehmen die volle Breite ein
+- Touch-freundliche Abstände und Buttons
 
 ---
 
-## 3. Mobile (< 768px)
+## Projekt-Detailseite
 
-Elemente werden hauptsächlich untereinander angeordnet (Single-Column), um auf kleinen Bildschirmen lesbar und bedienbar zu bleiben.
+### Desktop
 
-### Startseite (Home)
-```text
-+-------------------------------------------+
-| [Logo]                     [☰ Navigation] |
-+-------------------------------------------+
-|                                           |
-|               [3D Cube]                   |
-|                                           |
-|             Philippe Saxer                |
-|                                           |
-|     [Alle Projekte] [Kontakt]             |
-+-------------------------------------------+
-| Projekte                                  |
-| [Card 1] (voller Screen)                  |
-| [Card 2]                                  |
-| ...                                       |
-+-------------------------------------------+
-| Kategorien                                |
-| [Games]                                   |  <-- Untereinander (od. max 2 klein)
-| [Backend]                                 |
-| [IoT]                                     |
-| ...                                       |
-+-------------------------------------------+
-| [Logo & Info]                             |
-| [Navigation]                              |
-| [Kontakt]                                 |
-| [Newsletter]                              |
-+-------------------------------------------+
-```
+![Projekt-Detail Desktop](../images/projektdetail.png)
 
-### Kontaktseite (Kontakt)
-```text
-+-------------------------------------------+
-| [Logo]                     [☰ Navigation] |
-+-------------------------------------------+
-| Kontakt                                   |
-| Schreib mir                               |
-+-------------------------------------------+
-| Kontaktformular                           |
-| [Name]                                    |
-| [E-Mail]                                  |
-| [Betreff]                                 |
-| [Nachricht]                               |
-| [Senden]                                  |
-+-------------------------------------------+
-| Team Photo & Ausbildung                   |
-+-------------------------------------------+
-| Terminbuchung (Cal.com Embed)             |
-+-------------------------------------------+
-```
+- Detailansicht mit großem Vorschaubild
+- Projektinformationen und Beschreibung nebeneinander
+- Technische Details und Links sichtbar im sichtbaren Bereich
+
+### Tablet
+
+![Projekt-Detail Tablet](../images/projektdetail-tablet.png)
+
+- Inhalt stärker gestapelt, aber noch mit horizontaler Struktur
+- Bild oben, Textabschnitt darunter oder daneben
+- Fokus auf Lesbarkeit und klaren Abschnitten
+
+### Mobile
+
+![Projekt-Detail Mobile](../images/projektdetail-handy.png)
+
+- Vertikale Reihenfolge: Bild, Titel, Beschreibung, Details
+- Große Schaltflächen und klarer Textfluss
+- Weniger visuelle Elemente, Fokus auf Inhalte
+
+---
+
+## Kontaktseite
+
+### Desktop
+
+![Kontakt Desktop](../images/kontakt.png)
+
+- Formular und Kontaktinformationen nebeneinander
+- Header mit Navigation, klare Call-to-Action
+- Terminbuchung als eigener Abschnitt möglich
+
+### Tablet
+
+![Kontakt Tablet](../images/kontakt-tablet.png)
+
+- Zwei Spalten oder gestapelte Sektionen
+- Formular bleibt zentral, Zusatzinfos daneben
+- Mobile-ähnliche Struktur ohne zu viel Platzverlust
+
+### Mobile
+
+![Kontakt Mobile](../images/kontakt-handy.png)
+
+- Einspaltiges Kontaktformular
+- Klar getrennte Bereiche für Text, Formular und Terminbuchung
+- Einfaches Scrolling und große Buttons
