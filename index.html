@@ -452,10 +452,14 @@
       const cubeContainer = document.getElementById("cubeContainer");
       
       if (heroCube && cubeContainer) {
+        const isMobile = window.matchMedia("(max-width: 768px)").matches;
+        const isTouch = window.matchMedia("(hover: none)").matches;
+        
         let scrollRotationY = 0;
-        let mouseRotationX = -10; // Default tilt looks better on mobile
+        let mouseRotationX = isMobile ? 0 : -10; // No default tilt on mobile (prevents clipping)
         let mouseRotationY = 0;
         let isCubeTick = false;
+        const scrollFactor = isMobile ? 0.12 : 0.15; // Slightly slower on mobile for smoothness
 
         const handleCubeUpdate = () => {
           const totalY = scrollRotationY + mouseRotationY;
@@ -472,22 +476,24 @@
 
         // Scroll controls the main Y-axis spin
         window.addEventListener("scroll", () => {
-          scrollRotationY = window.scrollY * 0.15; 
+          scrollRotationY = window.scrollY * scrollFactor; 
           queuedCubeUpdate();
-        });
+        }, { passive: true });
 
-        // Mouse move controls the 3D tilt (parallax effect)
-        document.addEventListener("mousemove", (e) => {
-          // Normalize mouse coordinates from -1 to 1 based on window center
-          const x = (e.clientX / window.innerWidth - 0.5) * 2;
-          const y = (e.clientY / window.innerHeight - 0.5) * 2;
-          
-          // Max tilt of 25 degrees
-          mouseRotationY = x * 25; 
-          mouseRotationX = -y * 25; // Negative so mouse up tilts up
-          
-          queuedCubeUpdate();
-        });
+        // Mouse move controls the 3D tilt (parallax effect) — desktop only
+        if (!isTouch) {
+          document.addEventListener("mousemove", (e) => {
+            // Normalize mouse coordinates from -1 to 1 based on window center
+            const x = (e.clientX / window.innerWidth - 0.5) * 2;
+            const y = (e.clientY / window.innerHeight - 0.5) * 2;
+            
+            // Max tilt of 25 degrees
+            mouseRotationY = x * 25; 
+            mouseRotationX = -y * 25; // Negative so mouse up tilts up
+            
+            queuedCubeUpdate();
+          });
+        }
 
         queuedCubeUpdate();
       }

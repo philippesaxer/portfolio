@@ -182,9 +182,10 @@
     height: 100dvh;
     height: 100vh;
     /* fallback */
+    padding: var(--sp-lg); /* Breathing room so 3D perspective doesn't clip */
   }
 
-  /* 3D Cube — Significantly bigger text inside for mobile */
+  /* 3D Cube — Properly scaled text for smaller mobile cube */
   .stat-number {
     font-size: 3.5rem; /* Significantly larger numbers */
   }
@@ -194,7 +195,7 @@
   }
 
   .cube-code {
-    font-size: 1.8rem; /* Larger greetings */
+    font-size: 1.5rem; /* Scaled down for smaller cube */
   }
 
   .cube-container {
@@ -209,32 +210,32 @@
 
   /* Cube face content adjustments */
   .cube .hero-name {
-    font-size: clamp(2rem, 8vw, 3.5rem);
+    font-size: clamp(1.8rem, 7vw, 3rem);
   }
 
   .cube .hero-label {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     margin-bottom: var(--sp-sm);
   }
 
   .cube .hero-tagline {
-    font-size: 0.9rem !important;
+    font-size: 0.85rem !important;
     line-height: 1.5;
     margin-bottom: var(--sp-md);
   }
 
   /* Stats inside cube face */
   .cube .hero-stats {
-    gap: 1rem !important;
-    padding: 0 5% !important;
+    gap: 0.75rem !important;
+    padding: 0 4% !important;
   }
 
   .cube .stat-number {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 
   .cube .stat-label {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
   }
 
   /* CTA buttons inside cube */
@@ -245,13 +246,13 @@
 
   .cube .hero-cta .btn-primary,
   .cube .hero-cta .btn-secondary {
-    padding: 0.65rem 1.25rem;
-    font-size: 0.82rem;
+    padding: 0.55rem 1.1rem;
+    font-size: 0.78rem;
   }
 
   .cube .face h2 {
-    font-size: 1.6rem !important;
-    margin-bottom: 0.75rem !important;
+    font-size: 1.4rem !important;
+    margin-bottom: 0.5rem !important;
   }
 
   /* Card text bigger on mobile */
@@ -530,45 +531,49 @@
     padding: 0 1rem;
   }
 
-  /* Cube content fine-tuning */
+  /* Cube content fine-tuning for smaller cube */
   .hero-content-wrapper {
-    padding: var(--sp-sm);
+    padding: var(--sp-xs) var(--sp-sm);
   }
 
   .cube .hero-name {
-    font-size: clamp(1.75rem, 7vw, 2.5rem);
+    font-size: clamp(1.5rem, 6vw, 2.2rem);
   }
 
   .cube .hero-label {
-    font-size: 0.6rem;
+    font-size: 0.55rem;
     letter-spacing: 0.1em;
   }
 
   .cube .hero-tagline {
-    font-size: 0.8rem !important;
+    font-size: 0.75rem !important;
   }
 
   .cube .hero-stats {
-    gap: 0.75rem !important;
-    padding: 0 3% !important;
+    gap: 0.5rem !important;
+    padding: 0 2% !important;
   }
 
   .cube .stat-number {
-    font-size: 1.3rem;
+    font-size: 1.15rem;
   }
 
   .cube .stat-label {
-    font-size: 0.55rem;
+    font-size: 0.5rem;
   }
 
   .cube .hero-cta .btn-primary,
   .cube .hero-cta .btn-secondary {
-    padding: 0.5rem 1rem;
-    font-size: 0.75rem;
+    padding: 0.45rem 0.9rem;
+    font-size: 0.7rem;
   }
 
   .cube .face h2 {
-    font-size: 1.25rem !important;
+    font-size: 1.1rem !important;
+  }
+
+  .cube-code {
+    font-size: 1.2rem;
   }
 
   /* Header tweaks */
@@ -615,17 +620,29 @@
 
 @media (max-width: 360px) {
   .cube .hero-name {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
   }
 
   .cube .stat-number {
-    font-size: 1.1rem;
+    font-size: 1rem;
+  }
+
+  .cube .stat-label {
+    font-size: 0.45rem;
   }
 
   .cube .hero-cta .btn-primary,
   .cube .hero-cta .btn-secondary {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.7rem;
+    padding: 0.35rem 0.7rem;
+    font-size: 0.65rem;
+  }
+
+  .cube .face h2 {
+    font-size: 0.95rem !important;
+  }
+
+  .cube-code {
+    font-size: 1rem;
   }
 
   .h-card {
