@@ -210,7 +210,7 @@
 
   /* Cube face content adjustments */
   .cube .hero-name {
-    font-size: clamp(1.8rem, 7vw, 3rem);
+    font-size: clamp(2.5rem, 10vw, 4rem);
   }
 
   .cube .hero-label {
@@ -537,7 +537,7 @@
   }
 
   .cube .hero-name {
-    font-size: clamp(1.5rem, 6vw, 2.2rem);
+    font-size: clamp(2.2rem, 9vw, 3rem);
   }
 
   .cube .hero-label {
@@ -620,7 +620,7 @@
 
 @media (max-width: 360px) {
   .cube .hero-name {
-    font-size: 1.3rem;
+    font-size: 1.8rem;
   }
 
   .cube .stat-number {
