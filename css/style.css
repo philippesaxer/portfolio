@@ -3021,3 +3021,160 @@ label[for="filter-systems"]:hover {
     height: 150px;
   }
 }
+
+/* ============================================================
+   EASTER EGG - SNAKE GAME
+   ============================================================ */
+
+/* Hover animation on footer logo */
+.footer-brand .site-logo img {
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.footer-brand .site-logo img:hover {
+  animation: logo-runaway 0.3s cubic-bezier(.36,.07,.19,.97) infinite;
+  cursor: pointer;
+}
+
+@keyframes logo-runaway {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(5px, -5px) rotate(5deg); }
+  50% { transform: translate(-5px, -5px) rotate(-5deg); }
+  75% { transform: translate(-5px, 5px) rotate(-5deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+/* Modal styles */
+.snake-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.snake-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.snake-game-container {
+  background: #4a752c;
+  padding-top: 60px;
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  margin: 10px;
+  max-width: calc(100vw - 20px);
+  box-sizing: border-box;
+}
+
+.snake-top-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.snake-score-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.snake-apple-icon {
+  width: 24px;
+  height: 24px;
+  background: #e7471d;
+  border-radius: 50%;
+  display: block;
+}
+
+.snake-close-btn {
+  background: rgba(0,0,0,0.2);
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  line-height: 1;
+}
+
+.snake-close-btn:hover {
+  background: rgba(0,0,0,0.4);
+}
+
+#snakeCanvas {
+  background: #aad751;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  display: block;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 17 / 15;
+}
+
+.snake-game-over {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  display: none;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.snake-game-over.active {
+  display: flex;
+}
+
+.snake-game-over h2 {
+  margin: 0;
+  font-size: 32px;
+  color: white;
+}
+
+.snake-restart-btn {
+  background: #0071E3;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.snake-restart-btn:hover {
+  background: #0060C0;
+}
