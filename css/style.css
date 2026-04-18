@@ -3178,3 +3178,10 @@ label[for="filter-systems"]:hover {
 .snake-restart-btn:hover {
   background: #0060C0;
 }
+
+.cube-contact-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+}

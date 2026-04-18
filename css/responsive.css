@@ -250,7 +250,8 @@
     font-size: 0.78rem;
   }
 
-  .cube .face h2 {
+  .cube .face h2,
+  .cube .face .cube-contact-title {
     font-size: 1.4rem !important;
     margin-bottom: 0.5rem !important;
   }
@@ -581,7 +582,8 @@
     font-size: 0.7rem;
   }
 
-  .cube .face h2 {
+  .cube .face h2,
+  .cube .face .cube-contact-title {
     font-size: 1.1rem !important;
   }
 
@@ -650,7 +652,8 @@
     font-size: 0.65rem;
   }
 
-  .cube .face h2 {
+  .cube .face h2,
+  .cube .face .cube-contact-title {
     font-size: 0.95rem !important;
   }
 
