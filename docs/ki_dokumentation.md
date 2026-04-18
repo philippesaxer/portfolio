@@ -12,18 +12,18 @@ Das Ziel unseres Projekts war es, KI-gestützte Entwicklungsumgebungen gezielt z
 
 Im Rahmen des Projekts wurden folgende KI-Tools eingesetzt:
 
-- :contentReference[oaicite:0]{index=0}  
-- :contentReference[oaicite:1]{index=1} in Kombination mit der KI-IDE Antigravity  
+- Claude
+- Gemini Pro in Kombination mit der KI-IDE Antigravity  
 
 ---
 
 ## 3. Einstieg in die Arbeit mit KI  
 
-Zu Beginn der Entwicklung wurde :contentReference[oaicite:2]{index=2} eingesetzt, um eine erste Version der Webseite zu erstellen. Das Tool überzeugte durch seine Fähigkeit, schnell qualitativ hochwertigen und funktionierenden Code zu generieren.  
+Zu Beginn der Entwicklung wurde Claude eingesetzt, um eine erste Version der Webseite zu erstellen. Das Tool überzeugte durch seine Fähigkeit, schnell qualitativ hochwertigen und funktionierenden Code zu generieren.  
 
 Allerdings zeigte sich im praktischen Einsatz ein wesentlicher Nachteil: Der hohe Tokenverbrauch schränkte die langfristige Nutzung erheblich ein. Dadurch war das Tool vor allem für kürzere, intensive Arbeitsphasen geeignet.
 
-Im weiteren Verlauf wurde auf Antigravity in Kombination mit :contentReference[oaicite:3]{index=3} gewechselt. Diese Umgebung ermöglichte ein deutlich stabileres und nachhaltigeres Arbeiten über längere Zeiträume hinweg.  
+Im weiteren Verlauf wurde auf Antigravity in Kombination mit Gemini Pro gewechselt. Diese Umgebung ermöglichte ein deutlich stabileres und nachhaltigeres Arbeiten über längere Zeiträume hinweg.  
 
 Dabei wurde jedoch deutlich, dass die Qualität der Ergebnisse stark von der Präzision der Eingaben abhängt. Im Gegensatz zu Claude Code liefert dieses System nicht automatisch optimale Resultate, sondern erfordert klar strukturierte und detaillierte Prompts.
 
@@ -51,7 +51,7 @@ Dabei lag der Fokus darauf:
 
 Es zeigte sich, dass die Qualität der KI-Ergebnisse direkt mit der Qualität der Eingaben zusammenhängt. Gut formulierte Prompts führten zu deutlich besseren und effizienteren Resultaten. Als hilfe brauchte ich dieses Bild.
 
-[Prompt Tipps](../images/prompt.png)
+![Prompt Tipps](../images/prompt.png)
 
 ---
 
@@ -63,8 +63,8 @@ Neben der technischen Umsetzung wurde KI auch für gestalterische Aspekte einges
 
 Zur Ergänzung der KI-generierten Vorschläge wurden externe Inspirationsquellen genutzt, unter anderem:
 
-- :contentReference[oaicite:4]{index=4} als Referenz für hochwertiges Webdesign  
-- :contentReference[oaicite:5]{index=5} zur Analyse und Planung von UI-Strukturen  
+- [Apple](https://www.apple.com/) als Referenz für hochwertiges Webdesign  
+- [Dribbble](https://dribbble.com/) zur Analyse und Planung von UI-Strukturen  
 - Webseiten mit fortgeschrittenen Animationen (z. B. 3D-Transformationen)  
 
 Die Kombination aus KI-Unterstützung und bestehenden Designbeispielen führte zu deutlich besseren Ergebnissen.
@@ -100,8 +100,8 @@ Für den Vergleich wurden folgende Kriterien definiert:
 ### 5.3 Interpretation des Vergleichs  
 Die Analyse zeigt, dass beide Tools unterschiedliche Stärken besitzen:  
 
-- :contentReference[oaicite:6]{index=6} eignet sich besonders für schnelle, qualitativ hochwertige Codegenerierung mit geringem Aufwand bei der Eingabe.  
-- :contentReference[oaicite:7]{index=7} in Antigravity hingegen ist besser für kontinuierliches Arbeiten geeignet, erfordert jedoch deutlich mehr Präzision im Umgang mit Prompts.  
+- Claude eignet sich besonders für schnelle, qualitativ hochwertige Codegenerierung mit geringem Aufwand bei der Eingabe.  
+- Gemini Pro in Antigravity hingegen ist besser für kontinuierliches Arbeiten geeignet, erfordert jedoch deutlich mehr Präzision im Umgang mit Prompts.  
 
 Die Kombination beider Ansätze ermöglicht eine besonders effiziente Arbeitsweise.
 
