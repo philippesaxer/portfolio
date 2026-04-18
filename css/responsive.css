@@ -297,10 +297,27 @@
     grid-template-columns: 1fr;
   }
 
-  /* Adjust horizontal track elements */
+  /* Override horizontal scroll to vertical stack */
+  .project-horizontal-scroll {
+    height: auto;
+  }
+
+  .horizontal-sticky-container {
+    position: static;
+    height: auto;
+    display: block;
+  }
+
+  .horizontal-track {
+    flex-direction: column;
+    gap: var(--sp-lg);
+    transform: none !important;
+  }
+
   .h-card {
-    flex: 0 0 85vw;
-    max-width: 380px;
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 100%;
   }
 
   .categories-grid {
@@ -484,11 +501,7 @@
     padding: 2rem 1.25rem;
   }
 
-  /* Horizontal track cards */
-  .h-card {
-    flex: 0 0 88vw;
-    max-width: none;
-  }
+  /* Horizontal track cards removed for vertical stack */
 
   /* Section headers */
   .section-label {
@@ -645,9 +658,7 @@
     font-size: 1rem;
   }
 
-  .h-card {
-    flex: 0 0 92vw;
-  }
+  /* Horizontal track removed */
 
   .nav-link {
     font-size: 0.72rem;

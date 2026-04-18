@@ -39,6 +39,11 @@ document.addEventListener('DOMContentLoaded', () => {
         let isScrolling = false;
         
         const computeHorizontalScroll = () => {
+            if (window.innerWidth <= 768) {
+                projectTrack.style.transform = '';
+                isScrolling = false;
+                return;
+            }
             const sectionOffsetTop = horizontalSection.offsetTop;
             const scrollDistance = window.scrollY - sectionOffsetTop;
             
