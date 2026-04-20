@@ -85,15 +85,16 @@ Für den Vergleich definierte ich folgende Kriterien:
 
 ### 5.2 Vergleichstabelle  
 
-| Kriterium | Claude Code | Antigravity (mit Gemini Pro) |
+| Kriterium | Claude Code | Antigravity |
 | :--- | :--- | :--- |
 | **Entwickler** | Anthropic | Google |
-| **Art** | KI-Coding-Tool | KI-IDE |
-| **Codequalität** | Sehr hoch | Sehr hoch |
-| **Tokenverbrauch** | Hoch | Gering |
-| **Prompt-Abhängigkeit** | Gering | Hoch |
-| **Arbeitsweise** | Schnell und direkt | Strukturiert und nachhaltig |
-| **Eignung** | Kurzfristige Aufgaben | Langfristige Projekte |
+| **Art** | KI-Coding-Tool | KI-IDE (Entwicklungsumgebung mit KI) |
+| **Programmierqualität** | Sehr gute Ergebnisse beim Programmieren | Gute Programmierergebnisse |
+| **Tokenverbrauch** | Verbraucht schnell viele Tokens | Kein starkes Tokenproblem bei Nutzung mit Gemini Pro |
+| **Genauigkeit der Prompts** | Liefert automatisch gute Ergebnisse | Prompts müssen sehr genau formuliert sein |
+| **Nutzung** | Gut für schnelle Code-Generierung | Gut für längeres Arbeiten an Projekten |
+| **Integration** | Fokus auf KI-Codegenerierung | Vollständige IDE mit KI-Unterstützung |
+| **Persönliche Erfahrung** | Sehr stark, aber wegen Tokens nur kurz nutzbar | Gut nutzbar, wenn man präzise Prompts schreibt |
 
 ---
 
