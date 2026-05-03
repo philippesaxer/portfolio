@@ -2273,7 +2273,7 @@ label[for="filter-systems"]:hover {
   height: 100%;
   position: relative;
   transform-style: preserve-3d;
-  /* Rotate via JS scroll, but keep smooth transition */
+  will-change: transform;
   transition: transform 0.1s linear;
 }
 

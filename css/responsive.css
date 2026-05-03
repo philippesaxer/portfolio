@@ -134,6 +134,12 @@
     display: none !important;
   }
 
+  /* DISABLE backdrop-filter on mobile for significant performance gains */
+  .face, .project-card, .category-card, .glass-overlay, .contact-card, .contact-info-card, .team-card, .header-scrolled, .project-hero-area::before {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
   .container {
     padding: 0 1.25rem;
   }
